@@ -278,7 +278,7 @@ void MGEDemo::_initializeScene()
     plane2->setMesh(cubeMeshF);
     plane2->setMaterial(maroonMaterial);
     plane2->setBehaviour(new FPController(3.0f,1.0f,camera,FPController::InputType::WASD));
-    plane2->scale(glm::vec3(.1));
+    plane2->scale(glm::vec3(.1f));
     _world->add(plane2);
 
     camera->setParent(plane2);
@@ -418,7 +418,7 @@ void MGEDemo::_render() {
    // ((PointLightAttenuationMaterial*)pointAttenuationMat)->setLightPos(light2->getWorldPosition());
     AbstractGame::_render();
     _updateHud();
-        std::cout<<plane2->getWorldPosition()<<std::endl;
+    //    std::cout<<plane2->getWorldPosition()<<std::endl;
          std::cout<<box->getWorldPosition()<<std::endl;
 
    // _world->renderDebugInfo();

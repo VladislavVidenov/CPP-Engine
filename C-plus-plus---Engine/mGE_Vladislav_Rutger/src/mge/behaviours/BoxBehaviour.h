@@ -14,6 +14,8 @@ class BoxBehaviour: public AbstractBehaviour
     protected:
     private:
         GameObject * _player;
+        bool _isCarried;
+        bool _canPress;
 };
 
 #endif // BOXBEHAVIOUR_H
