@@ -71,6 +71,10 @@ AbstractMaterial* pointLightMaterial;
 AbstractMaterial* pointAttenuationMat;
 PointLight* light2;
  GameObject* plane2 ;
+ GameObject* room ;
+GameObject* pilars ;
+GameObject* roof ;
+GameObject* spikes ;
 //build the game _world
 void MGEDemo::_initializeScene()
 {
@@ -91,6 +95,11 @@ void MGEDemo::_initializeScene()
    // Mesh* sphereMesh = Mesh::load (config::MGE_MODEL_PATH+"sphere_smooth.obj");
     Mesh* teapotMeshS = Mesh::load (config::MGE_MODEL_PATH+"teapot_smooth.obj");
    // Mesh* handgunMesh = Mesh::load (config::MGE_MODEL_PATH+"handgun.obj");
+
+   Mesh* roomMesh = Mesh::load (config::MGE_MODEL_PATH+"Room.obj");
+    Mesh* pilarsMesh = Mesh::load (config::MGE_MODEL_PATH+"Pilars.obj");
+    Mesh* roofMesh = Mesh::load (config::MGE_MODEL_PATH+"Roof.obj");
+    Mesh* spikesMesh = Mesh::load (config::MGE_MODEL_PATH+"Spikes.obj");
 //=====================================================================================================================================================================================================//
 
 
@@ -276,6 +285,26 @@ void MGEDemo::_initializeScene()
     /** GameObject* plane2
             Multiple lights
 */
+room = new GameObject ("room", glm::vec3(0,0,0));
+    room->setMesh(roomMesh);
+    room->setMaterial(textureMaterial);
+    _world->add(room);
+
+     roof = new GameObject ("roof", glm::vec3(0,0,0));
+    roof->setMesh(roofMesh);
+    roof->setMaterial(textureMaterial2);
+    _world->add(roof);
+
+       spikes = new GameObject ("spikes", glm::vec3(0,0,0));
+    spikes->setMesh(spikesMesh);
+    spikes->setMaterial(textureMaterial2);
+    _world->add(spikes);
+
+       pilars = new GameObject ("pilars", glm::vec3(0,0,0));
+    pilars->setMesh(pilarsMesh);
+    pilars->setMaterial(textureMaterial2);
+    _world->add(pilars);
+
     GameObject* teapot = new GameObject ("teapot", glm::vec3(0,0,0));
     teapot->setMesh (teapotMeshS);
     teapot->setMaterial(textureLit);
