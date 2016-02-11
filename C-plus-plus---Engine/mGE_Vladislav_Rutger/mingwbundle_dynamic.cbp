@@ -22,6 +22,7 @@
 					<Add directory="src/mge/core/light" />
 					<Add directory="src/mge/util" />
 					<Add directory="include" />
+					<Add directory="src/mge/core/collision" />
 				</Compiler>
 				<Linker>
 					<Add library="glew32" />
@@ -121,6 +122,12 @@
 		<Unit filename="src/mge/core/Timer.hpp" />
 		<Unit filename="src/mge/core/World.cpp" />
 		<Unit filename="src/mge/core/World.hpp" />
+		<Unit filename="src/mge/core/collision/BoxCollider.cpp" />
+		<Unit filename="src/mge/core/collision/BoxCollider.h" />
+		<Unit filename="src/mge/core/collision/Collider.cpp" />
+		<Unit filename="src/mge/core/collision/Collider.h" />
+		<Unit filename="src/mge/core/collision/SphereCollider.cpp" />
+		<Unit filename="src/mge/core/collision/SphereCollider.h" />
 		<Unit filename="src/mge/core/light/DirectionalLight.cpp" />
 		<Unit filename="src/mge/core/light/DirectionalLight.h" />
 		<Unit filename="src/mge/core/light/Light.cpp" />

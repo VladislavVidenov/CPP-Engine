@@ -12,8 +12,8 @@
 
 ShaderProgram* TextureLitMaterial::_shader = NULL;
 
-TextureLitMaterial::TextureLitMaterial(Texture * pDiffuseTexture,glm::vec3 pSpecular, float pShininess):
-    _diffuseTexture(pDiffuseTexture),_specular(pSpecular),_shininess(pShininess)
+TextureLitMaterial::TextureLitMaterial(Texture * pDiffuseTexture,Texture * pSpecularTexture, float pShininess):
+    _diffuseTexture(pDiffuseTexture),_specularTexture(pSpecularTexture),_shininess(pShininess)
 {
     _lazyInitializeShader();
 }
@@ -39,13 +39,14 @@ void TextureLitMaterial::render(World* pWorld, GameObject* pGameObject, Camera* 
     _shader->use();
 
     //setup texture slot 0
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, _diffuseTexture->getId());
 
+    _shader->setTexture(_shader->getUniformLocation("matDiffuse"),0,_diffuseTexture->getId());
+    _shader->setTexture(_shader->getUniformLocation("matSpecular"),1,_specularTexture->getId());
 
     //set material uniforms
     glUniform1i (_shader->getUniformLocation("matDiffuse"), 0);
-    glUniform3fv (_shader->getUniformLocation("material.specular"),1, glm::value_ptr(_specular));
+    glUniform1i (_shader->getUniformLocation("matSpecular"), 1);
+   // glUniform3fv (_shader->getUniformLocation("material.specular"),1, glm::value_ptr(_specular));
     glUniform1f (_shader->getUniformLocation("material.shininess"), _shininess);
     glUniform3fv(_shader->getUniformLocation("cameraPosition"),1, glm::value_ptr( pCamera->getWorldPosition()));
     int pointCount = 0;
@@ -55,16 +56,37 @@ void TextureLitMaterial::render(World* pWorld, GameObject* pGameObject, Camera* 
             Light* temp = pWorld->getLightAt(i);
         switch(temp->type){
             case Light::LightType::Directional:
-
+                glUniform3fv(_shader->getUniformLocation("dirLight.direction"),1, glm::value_ptr(((DirectionalLight*)temp)->direction));
+                glUniform3fv(_shader->getUniformLocation("dirLight.ambient"),1, glm::value_ptr(temp->ambient));
+                glUniform3fv(_shader->getUniformLocation("dirLight.diffuse"),1,glm::value_ptr(temp->diffuse));
+                glUniform3fv(_shader->getUniformLocation("dirLight.specular"),1, glm::value_ptr(temp->specular));
                 break;
             case Light::LightType::Point:
                 {
+                  pointCount++;
+                std::string num = "pointLight[" + std::to_string(pointCount - 1) + "].";
 
+                glUniform3fv(_shader->getUniformLocation(num + "position"),1, glm::value_ptr(temp->getWorldPosition()));
+                glUniform3fv(_shader->getUniformLocation(num + "ambient"),1, glm::value_ptr(temp->ambient));
+                glUniform3fv(_shader->getUniformLocation(num + "diffuse"),1,glm::value_ptr(temp->diffuse));
+                glUniform3fv(_shader->getUniformLocation(num + "specular"),1, glm::value_ptr(temp->specular));
+                glUniform1f (_shader->getUniformLocation(num + "constant"), 1.f);
+                glUniform1f (_shader->getUniformLocation(num + "linear"), 0.09f);
+                glUniform1f (_shader->getUniformLocation(num + "quadratic"), 0.032f);
                 }
                 break;
             case Light::LightType::Spot:
                 {
+                    pointCount++;
+                    std::string num = "pointLight[" + std::to_string(pointCount - 1) + "].";
 
+                    glUniform3fv(_shader->getUniformLocation(num + "position"),1, glm::value_ptr(temp->getWorldPosition()));
+                    glUniform3fv(_shader->getUniformLocation(num + "ambient"),1, glm::value_ptr(temp->ambient));
+                    glUniform3fv(_shader->getUniformLocation(num + "diffuse"),1,glm::value_ptr(temp->diffuse));
+                    glUniform3fv(_shader->getUniformLocation(num + "specular"),1, glm::value_ptr(temp->specular));
+                    glUniform1f (_shader->getUniformLocation(num + "constant"), 1.f);
+                    glUniform1f (_shader->getUniformLocation(num + "linear"), 0.09f);
+                    glUniform1f (_shader->getUniformLocation(num + "quadratic"), 0.032f);
                 }
                 break;
         }

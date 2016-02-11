@@ -66,18 +66,16 @@ void TextureNormalMaterial::render(World* pWorld, GameObject* pGameObject, Camer
             //    glUniform3fv(_shader->getUniformLocation("dirLight.specular"),1, glm::value_ptr(temp->specular));
                 break;
             case Light::LightType::Point:
-                pointCount++;
-                std::string num = "pointLight[" + std::to_string(pointCount - 1) + "].";
-
-                //glUniform3fv(_shader->getUniformLocation(num + "position"),1, glm::value_ptr(temp->getWorldPosition()));
-                glUniform3fv(_shader->getUniformLocation("lightPosition"),1, glm::value_ptr(temp->getWorldPosition()));
-
-           //     glUniform3fv(_shader->getUniformLocation(num + "ambient"),1, glm::value_ptr(temp->ambient));
-           //     glUniform3fv(_shader->getUniformLocation(num + "diffuse"),1,glm::value_ptr(temp->diffuse));
-           //     glUniform3fv(_shader->getUniformLocation(num + "specular"),1, glm::value_ptr(temp->specular));
-           //     glUniform1f (_shader->getUniformLocation(num + "constant"), 1.f);
-          //      glUniform1f (_shader->getUniformLocation(num + "linear"), 0.09f);
-          //      glUniform1f (_shader->getUniformLocation(num + "quadratic"), 0.032f);
+//                pointCount++;
+//                std::string num = "pointLight[" + std::to_string(pointCount - 1) + "].";
+//
+//                glUniform3fv(_shader->getUniformLocation(num + "position"),1, glm::value_ptr(temp->getWorldPosition()));
+//                glUniform3fv(_shader->getUniformLocation(num + "ambient"),1, glm::value_ptr(temp->ambient));
+//                glUniform3fv(_shader->getUniformLocation(num + "diffuse"),1,glm::value_ptr(temp->diffuse));
+//                glUniform3fv(_shader->getUniformLocation(num + "specular"),1, glm::value_ptr(temp->specular));
+//                glUniform1f (_shader->getUniformLocation(num + "constant"), 1.f);
+//                glUniform1f (_shader->getUniformLocation(num + "linear"), 0.09f);
+//                glUniform1f (_shader->getUniformLocation(num + "quadratic"), 0.032f);
                 break;
         }
     }

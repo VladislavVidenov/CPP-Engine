@@ -41,6 +41,10 @@ using namespace std;
 #include "mge/behaviours/Orbit.hpp"
 #include "Color.h"
 
+//collision
+#include "Collider.h"
+#include "BoxCollider.h"
+#include "SphereCollider.h"
 
 #include "mge/util/DebugHud.hpp"
 
@@ -78,13 +82,14 @@ void MGEDemo::_initializeScene()
     //load a bunch of meshes we will be using throughout this demo
     //each mesh only has to be loaded once, but can be used multiple times:
     //F is flat shaded, S is smooth shaded (normals aligned or not), check the models folder!
-   // Mesh* planeHighPoly = Mesh::load (config::MGE_MODEL_PATH+"plane_8192.obj");
+   Mesh* planeHighPoly = Mesh::load (config::MGE_MODEL_PATH+"plane_8192.obj");
     Mesh* planeQuad = Mesh::load (config::MGE_MODEL_PATH+"NormalPlane.obj");
 
     Mesh* cubeMeshF = Mesh::load (config::MGE_MODEL_PATH+"cube_flat.obj");
+    Mesh* t_Model = Mesh::load (config::MGE_MODEL_PATH+"t_Model.obj");
    // Mesh* suzannaMeshF = Mesh::load (config::MGE_MODEL_PATH+"suzanna_flat.obj");
    // Mesh* sphereMesh = Mesh::load (config::MGE_MODEL_PATH+"sphere_smooth.obj");
-   // Mesh* teapotMeshS = Mesh::load (config::MGE_MODEL_PATH+"teapot_smooth.obj");
+    Mesh* teapotMeshS = Mesh::load (config::MGE_MODEL_PATH+"teapot_smooth.obj");
    // Mesh* handgunMesh = Mesh::load (config::MGE_MODEL_PATH+"handgun.obj");
 //=====================================================================================================================================================================================================//
 
@@ -106,7 +111,7 @@ void MGEDemo::_initializeScene()
   //  AbstractMaterial* pistolMat = new TextureLitMaterial(Texture::load (config::MGE_TEXTURE_PATH+"pistol.png"),glm::vec3(.3f),32.f);
 
     //Texture Material + Light !
-    AbstractMaterial* textureLit = new TextureLitMaterial(Texture::load (config::MGE_TEXTURE_PATH+"bricks.jpg"),glm::vec3(.3f),32.f);
+    AbstractMaterial* textureLit = new TextureLitMaterial(Texture::load (config::MGE_TEXTURE_PATH+"test_Diffuse.png"),Texture::load (config::MGE_TEXTURE_PATH+"test_Specular.png"),32.f);
     //Simple Texture material - No light
     AbstractMaterial* textureMaterial = new TextureMaterial (Texture::load (config::MGE_TEXTURE_PATH+"land.jpg"));
 
@@ -138,6 +143,10 @@ void MGEDemo::_initializeScene()
     pointAttenuationMat = new PointLightAttenuationMaterial(glm::vec3(1.0f, 0.5f, 0.31f));
     ((PointLightAttenuationMaterial*)pointAttenuationMat)->setGlobalAmbientColor(glm::vec3(0,0.5f,0) * ambientIntensity);
  //==========================================================================================================================================================================================================================//
+
+
+
+
     /**
          Different light implementations, best work if object is added alone in scene !!!!
 
@@ -236,7 +245,7 @@ void MGEDemo::_initializeScene()
     */
 
 /** Wobble , nothat much
-*/
+
 
 
 
@@ -263,10 +272,10 @@ void MGEDemo::_initializeScene()
 //    cube->setMaterial(textureMaterial);
 //    cube->scale(glm::vec3(1));
 //    _world->add(cube);
-
+*/
     /** GameObject* plane2
             Multiple lights
-
+*/
     GameObject* teapot = new GameObject ("teapot", glm::vec3(0,0,0));
     teapot->setMesh (teapotMeshS);
     teapot->setMaterial(textureLit);
@@ -274,20 +283,21 @@ void MGEDemo::_initializeScene()
     _world->add(teapot);
 
     GameObject* cube = new GameObject ("cube", glm::vec3(2,2,0));
-    cube->setMesh (cubeMeshF);
+    cube->setMesh (t_Model);
     cube->setMaterial(textureLit);
     _world->add(cube);
+    cube->scale(glm::vec3(0.1f));
 
     Camera* camera = new Camera ("camera", glm::vec3(0,5,3));
     camera->rotate(glm::radians(-45.f),glm::vec3(1,0,0));
-    camera->setBehaviour(new Orbit(cube,25.f,85.f,35.f));
+    camera->setBehaviour(new Orbit(cube,25.f,85.f,5.f));
     _world->add(camera);
     _world->setMainCamera(camera);
 
-*/
+
     //{ LIGHTS
     //Directional Light
-    Light *dirLight = new DirectionalLight("Directional Light", glm::vec3(10,7,10),glm::vec3(0,0,1),glm::vec3(.1f,.1f,.1f),glm::vec3(1.f,1.f,1.f),glm::vec3(.5f,.5f,.5f));
+    Light *dirLight = new DirectionalLight("Directional Light", glm::vec3(10,7,10),glm::vec3(1,0,1),glm::vec3(.5f,.5f,.5f),glm::vec3(1.f,1.f,1.f),glm::vec3(1,1,1));
 
     //Points lights
 
@@ -295,9 +305,9 @@ void MGEDemo::_initializeScene()
     AbstractMaterial* lightMaterial = new ColorMaterial(light->diffuse);
     light->setMesh(cubeMeshF);
     light->setMaterial(lightMaterial);
-    //_world->add(light);
+    _world->add(light);
     light->scale(glm::vec3(0.2f,0.2f,0.2f));
-   // light->setBehaviour(new KeysBehaviour2());
+    light->setBehaviour(new KeysBehaviour2());
 
     light2 = new PointLight("PointLight2", glm::vec3(3.f,0,0),glm::vec3(.1f),Color::Red,Color::Red/3.3f);
     AbstractMaterial* lightMaterial2 = new ColorMaterial(light2->diffuse);
@@ -305,15 +315,15 @@ void MGEDemo::_initializeScene()
     light2->setMaterial(lightMaterial2);
     _world->add(light2);
     light2->scale(glm::vec3(0.2f,0.2f,0.2f));
-    //light2->setBehaviour(new KeysBehaviour2());
+    light2->setBehaviour(new KeysBehaviour2());
 
     Light *light3 = new SpotLight("SpotLight",glm::vec3(0,4,0),glm::vec3(.1f),glm::vec3(.8f),glm::vec3(.5f));
     AbstractMaterial* lightMaterial3 = new ColorMaterial(light3->diffuse);
     light3->setMesh(cubeMeshF);
     light3->setMaterial(lightMaterial3);
-    //_world->add(light3);
+    _world->add(light3);
     light3->scale(glm::vec3(0.2f,0.2f,0.2f));
-   // light3->setBehaviour(new KeysBehaviour2());
+    light3->setBehaviour(new KeysBehaviour2());
     //}
 
 
@@ -322,12 +332,25 @@ void MGEDemo::_initializeScene()
 
 
     //Add Lights
-   // _world->AddLight(dirLight);
-   // _world->AddLight(light);
-  //  _world->AddLight(light2);
-   // _world->AddLight(light3);
+    _world->AddLight(dirLight);
+    _world->AddLight(light);
+    _world->AddLight(light2);
+    _world->AddLight(light3);
    // _world->AddLight(light4);
     //======================================================================================
+    //PHYSICS TESTS
+
+
+
+    Collider * boxCol = new BoxCollider();
+    Collider * sphereCol = new SphereCollider();
+
+
+    boxCol->collide(boxCol);
+    boxCol->collide(sphereCol);
+
+    sphereCol->collide(sphereCol);
+    sphereCol->collide(boxCol);
 
 }
 

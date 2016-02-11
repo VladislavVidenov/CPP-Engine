@@ -11,7 +11,7 @@
 class TextureLitMaterial : public AbstractMaterial
 {
     public:
-        TextureLitMaterial(Texture * pDiffuseTexture,glm::vec3 pSpecular, float pShininess);
+        TextureLitMaterial(Texture * pDiffuseTexture,Texture * pSpecularTexture, float pShininess);
         virtual ~TextureLitMaterial ();
         virtual void render(World* pWorld, GameObject* pGameObject, Camera* pCamera);
 
@@ -23,6 +23,7 @@ class TextureLitMaterial : public AbstractMaterial
         static void _lazyInitializeShader();
 
         Texture* _diffuseTexture;
+        Texture* _specularTexture;
         glm::vec3 _specular;
         float _shininess;
 };

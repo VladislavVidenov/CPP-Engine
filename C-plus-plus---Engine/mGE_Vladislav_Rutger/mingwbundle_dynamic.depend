@@ -1937,86 +1937,86 @@
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
-1446369184 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\main.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\main.cpp
 	<iostream>
 	"mge/core/AbstractGame.hpp"
 	"mge/MGEDemo.hpp"
 
-1445873030 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\abstractgame.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\abstractgame.hpp
 	<SFML/Graphics.hpp>
 	<GL/glew.h>
 	<string>
 
-1453551266 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\mgedemo.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\mgedemo.hpp
 	<mge/core/AbstractGame.hpp>
 	<SFML/Graphics.hpp>
 	<vector>
 
-1446379616 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\abstractbehaviour.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\abstractbehaviour.cpp
 	<cassert>
 	<iostream>
 	"mge/behaviours/AbstractBehaviour.hpp"
 	"mge/core/GameObject.hpp"
 
-1446443548 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\abstractbehaviour.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\abstractbehaviour.hpp
 
-1455065642 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\gameobject.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\gameobject.hpp
 	<vector>
 	<string>
 	<iostream>
 	<glm.hpp>
 
-1427143972 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\glm.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\glm.hpp
 	<iostream>
 	<iomanip>
 	<glm/glm.hpp>
 	<glm/ext.hpp>
 
-1452848433 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour.cpp
 	"mge/behaviours/KeysBehaviour.hpp"
 	"mge/core/GameObject.hpp"
 	<sfml/window/event.hpp>
 
-1429266586 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour.hpp
 	"mge/behaviours/AbstractBehaviour.hpp"
 
-1453047222 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour2.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour2.cpp
 	"mge/behaviours/KeysBehaviour2.hpp"
 	"mge/core/GameObject.hpp"
 	<sfml/window/event.hpp>
 
-1455032101 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour2.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour2.hpp
 	"mge/behaviours/AbstractBehaviour.hpp"
 
-1451755017 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\lookat.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\lookat.cpp
 	<glm.hpp>
 	"mge/behaviours/LookAt.hpp"
 	"mge/core/GameObject.hpp"
 	<iostream>
 
-1446443760 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\lookat.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\lookat.hpp
 	<glm.hpp>
 	"mge/behaviours/AbstractBehaviour.hpp"
 
-1453994782 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\orbit.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\orbit.cpp
 	<glm.hpp>
 	"mge/behaviours/Orbit.hpp"
 	"mge/core/GameObject.hpp"
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1453770970 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\orbit.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\orbit.hpp
 	<glm.hpp>
 	"mge/behaviours/AbstractBehaviour.hpp"
 
-1428470630 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\rotatingbehaviour.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\rotatingbehaviour.cpp
 	"mge/behaviours/RotatingBehaviour.hpp"
 	"mge/core/GameObject.hpp"
 
-1428548704 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\rotatingbehaviour.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\rotatingbehaviour.hpp
 	"mge/behaviours/AbstractBehaviour.hpp"
 
-1453205366 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\abstractgame.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\abstractgame.cpp
 	"AbstractGame.hpp"
 	<iostream>
 	"mge/core/Timer.hpp"
@@ -2024,32 +2024,32 @@
 	"mge/core/Renderer.hpp"
 	"mge/core/World.hpp"
 
-1445874870 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\timer.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\timer.hpp
 	<SFML/System.hpp>
 
-1445873030 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\fps.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\fps.hpp
 
-1446701934 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\renderer.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\renderer.hpp
 
-1453394889 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\world.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\world.hpp
 	<vector>
 	"mge/core/GameObject.hpp"
 
-1453759417 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\camera.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\camera.cpp
 	<iostream>
 	<glm.hpp>
 	"mge/core/Camera.hpp"
 
-1453758815 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\camera.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\camera.hpp
 	<string>
 	"mge/core/GameObject.hpp"
 
-1445858948 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\fps.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\fps.cpp
 	<iostream>
 	"mge/core/FPS.hpp"
 	"mge/core/Timer.hpp"
 
-1455066141 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\gameobject.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\gameobject.cpp
 	<cassert>
 	<iostream>
 	<glm.hpp>
@@ -2058,38 +2058,38 @@
 	"mge/core/World.hpp"
 	"mge/behaviours/AbstractBehaviour.hpp"
 
-1453674958 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\mesh.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\mesh.hpp
 	<vector>
 	<cstring>
 	<string>
 	<GL/glew.h>
 	<glm.hpp>
 
-1453391546 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\directionallight.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\directionallight.cpp
 	"DirectionalLight.h"
 
-1453398230 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\directionallight.h
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\directionallight.h
 	<Light.h>
 
-1453766646 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\light.h
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\light.h
 	<mge/core/GameObject.hpp>
 
-1453398240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\light.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\light.cpp
 	"Light.h"
 
-1453402170 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\pointlight.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\pointlight.cpp
 	"PointLight.h"
 
-1453401491 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\pointlight.h
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\pointlight.h
 	<Light.h>
 
-1453763171 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\spotlight.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\spotlight.cpp
 	"SpotLight.h"
 
-1453766748 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\spotlight.h
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\spotlight.h
 	<Light.h>
 
-1455030838 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\mesh.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\mesh.cpp
 	"mge/core/Mesh.hpp"
 	<iostream>
 	<map>
@@ -2100,7 +2100,7 @@
 	"mge/core/Camera.hpp"
 	"glm.hpp"
 
-1453552209 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\renderer.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\renderer.cpp
 	"mge/core/Renderer.hpp"
 	<cassert>
 	<GL/glew.h>
@@ -2110,35 +2110,35 @@
 	"mge/materials/AbstractMaterial.hpp"
 	<iostream>
 
-1452846414 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\abstractmaterial.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\abstractmaterial.hpp
 	"mge/core/ShaderProgram.hpp"
 	"glm.hpp"
 
-1453562540 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\shaderprogram.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\shaderprogram.hpp
 	<vector>
 	<string>
 	<GL/glew.h>
 
-1453562711 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\shaderprogram.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\shaderprogram.cpp
 	"mge/core/ShaderProgram.hpp"
 	<iostream>
 	<fstream>
 
-1454892303 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\texture.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\texture.cpp
 	<iostream>
 	<string>
 	<SFML/Graphics.hpp>
 	"mge/core/Texture.hpp"
 
-1446702934 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\texture.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\texture.hpp
 	<map>
 	<string>
 	<GL/glew.h>
 
-1446703620 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\timer.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\timer.cpp
 	"mge/core/Timer.hpp"
 
-1453393752 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\world.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\world.cpp
 	<cassert>
 	<algorithm>
 	<iostream>
@@ -2147,71 +2147,71 @@
 	"mge/core/Mesh.hpp"
 	"Light.h"
 
-1453388779 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light.h
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light.h
 	<mge/core/GameObject.hpp>
 
-1452694983 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\abstractmaterial.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\abstractmaterial.cpp
 	"mge/materials/AbstractMaterial.hpp"
 
-1452695825 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\colormaterial.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\colormaterial.cpp
 	<glm.hpp>
 	"mge/materials/ColorMaterial.hpp"
 	"mge/config.hpp"
 	"mge/core/Camera.hpp"
 	"mge/core/Mesh.hpp"
 
-1452695874 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\colormaterial.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\colormaterial.hpp
 	"mge/materials/AbstractMaterial.hpp"
 	<glm.hpp>
 
-1425318538 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\config.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\config.hpp
 	<string>
 
-1452804278 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\fraglitcolormaterial.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\fraglitcolormaterial.cpp
 	<glm.hpp>
 	"mge/materials/FragLitColorMaterial.hpp"
 	"mge/config.hpp"
 	"mge/core/Camera.hpp"
 	"mge/core/Mesh.hpp"
 
-1452702173 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\fraglitcolormaterial.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\fraglitcolormaterial.hpp
 	"mge/materials/AbstractMaterial.hpp"
 	<glm.hpp>
 
-1453776112 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\pointlightattenuationmaterial.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\pointlightattenuationmaterial.cpp
 	<glm.hpp>
 	"mge/materials/PointLightAttenuationMaterial.hpp"
 	"mge/config.hpp"
 	"mge/core/Camera.hpp"
 	"mge/core/Mesh.hpp"
 
-1453318836 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\pointlightattenuationmaterial.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\pointlightattenuationmaterial.hpp
 	"mge/materials/AbstractMaterial.hpp"
 	<glm.hpp>
 
-1453774656 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\pointlightmaterial.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\pointlightmaterial.cpp
 	<glm.hpp>
 	"mge/materials/PointLightMaterial.hpp"
 	"mge/config.hpp"
 	"mge/core/Camera.hpp"
 	"mge/core/Mesh.hpp"
 
-1453044452 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\pointlightmaterial.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\pointlightmaterial.hpp
 	"mge/materials/AbstractMaterial.hpp"
 	<glm.hpp>
 
-1453761623 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\spotlightmaterial.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\spotlightmaterial.cpp
 	<glm.hpp>
 	"mge/materials/SpotLightMaterial.hpp"
 	"mge/config.hpp"
 	"mge/core/Camera.hpp"
 	"mge/core/Mesh.hpp"
 
-1453753920 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\spotlightmaterial.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\spotlightmaterial.hpp
 	"mge/materials/AbstractMaterial.hpp"
 	<glm.hpp>
 
-1453600809 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\terrainmaterial.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\terrainmaterial.cpp
 	<glm.hpp>
 	"mge/materials/TerrainMaterial.hpp"
 	"mge/core/Texture.hpp"
@@ -2220,11 +2220,11 @@
 	"mge/core/Timer.hpp"
 	"mge/config.hpp"
 
-1453579798 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\terrainmaterial.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\terrainmaterial.hpp
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
-1455030838 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.cpp
+1455107630 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.cpp
 	<glm.hpp>
 	"mge/materials/TextureLitMaterial.hpp"
 	"mge/core/Texture.hpp"
@@ -2236,11 +2236,11 @@
 	"PointLight.h"
 	"mge/config.hpp"
 
-1453389083 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.hpp
+1455106285 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.hpp
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
-1452695815 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturematerial.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturematerial.cpp
 	<glm.hpp>
 	"mge/materials/TextureMaterial.hpp"
 	"mge/core/Texture.hpp"
@@ -2248,11 +2248,11 @@
 	"mge/core/Mesh.hpp"
 	"mge/config.hpp"
 
-1452695894 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturematerial.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturematerial.hpp
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
-1455030838 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturenormalmaterial.cpp
+1455106115 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturenormalmaterial.cpp
 	<glm.hpp>
 	"mge/materials/TextureNormalMaterial.hpp"
 	"mge/core/Texture.hpp"
@@ -2264,22 +2264,22 @@
 	"PointLight.h"
 	"mge/config.hpp"
 
-1453799529 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturenormalmaterial.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturenormalmaterial.hpp
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
-1453674748 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\vertexlitcolormaterial.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\vertexlitcolormaterial.cpp
 	<glm.hpp>
 	"mge/materials/VertexLitColorMaterial.hpp"
 	"mge/config.hpp"
 	"mge/core/Camera.hpp"
 	"mge/core/Mesh.hpp"
 
-1452697764 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\vertexlitcolormaterial.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\vertexlitcolormaterial.hpp
 	"mge/materials/AbstractMaterial.hpp"
 	<glm.hpp>
 
-1454250578 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\wobblymaterial.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\wobblymaterial.cpp
 	<glm.hpp>
 	"mge/materials/WobblyMaterial.hpp"
 	"mge/core/Texture.hpp"
@@ -2288,13 +2288,13 @@
 	"mge/config.hpp"
 	"mge/core/Timer.hpp"
 
-1453799681 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\wobblymaterial.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\wobblymaterial.hpp
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
-1453466016 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\color.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\color.cpp
 
-1446370472 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\debughud.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\debughud.cpp
 	<cassert>
 	<iostream>
 	<cstdio>
@@ -2304,11 +2304,11 @@
 	"mge/util/DebugHud.hpp"
 	"mge/config.hpp"
 
-1446369904 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\debughud.hpp
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\debughud.hpp
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1455067595 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\mgedemo.cpp
+1455121681 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\mgedemo.cpp
 	<iostream>
 	<string>
 	"mge/core/Renderer.hpp"
@@ -2341,11 +2341,14 @@
 	"mge/behaviours/LookAt.hpp"
 	"mge/behaviours/Orbit.hpp"
 	"Color.h"
+	"Collider.h"
+	"BoxCollider.h"
+	"SphereCollider.h"
 	"mge/util/DebugHud.hpp"
 	"mge/config.hpp"
 	"mge/MGEDemo.hpp"
 
-1453467763 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\color.h
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\color.h
 	<glm.hpp>
 	"Color.h"
 
@@ -2787,29 +2790,51 @@
 
 1455030856 c:\users\kamel\desktop\opengl\c-plus-plus---engine\mge_vladislav_rutger\include\sound.h
 
-1455064334 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcamera.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcamera.cpp
 	"FPCamera.h"
 	<glm.hpp>
 	"mge/core/GameObject.hpp"
 	<SFML/Graphics.hpp>
 
-1455030821 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcamera.h
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcamera.h
 	<glm.hpp>
 	"mge/behaviours/AbstractBehaviour.hpp"
 	<SFML/Graphics.hpp>
 
-1455067759 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.cpp
 	<glm.hpp>
 	"mge/behaviours/FPController.h"
 	"mge/core/GameObject.hpp"
 	<SFML/Graphics.hpp>
 
-1455065589 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.h
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.h
 	<glm.hpp>
 	"mge/behaviours/AbstractBehaviour.hpp"
 
-1455030838 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\sound.cpp
+1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\sound.cpp
 	"Sound.h"
 
-1455030838 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\include\sound.h
+1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\include\sound.h
+
+1455115347 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.cpp
+	"BoxCollider.h"
+	<iostream>
+
+1455114184 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.h
+	<Collider.h>
+
+1455115109 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collider.h
+
+1455115391 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collider.cpp
+	"Collider.h"
+	"BoxCollider.h"
+	"SphereCollider.h"
+	<iostream>
+
+1455114514 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\spherecollider.h
+	<Collider.h>
+
+1455115359 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\spherecollider.cpp
+	"SphereCollider.h"
+	<iostream>
 
