@@ -2873,18 +2873,18 @@
 	<glm/glm.hpp>
 	<glm/ext.hpp>
 
-1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcamera.cpp
+1455206407 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcamera.cpp
 	"FPCamera.h"
 	<glm.hpp>
 	"mge/core/GameObject.hpp"
 	<SFML/Graphics.hpp>
 
-1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcamera.h
+1455206412 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcamera.h
 	<glm.hpp>
 	"mge/behaviours/AbstractBehaviour.hpp"
 	<SFML/Graphics.hpp>
 
-1455187699 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.cpp
+1455208151 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.cpp
 	<glm.hpp>
 	"mge/behaviours/FPController.h"
 	"mge/core/GameObject.hpp"
@@ -2971,7 +2971,7 @@
 	"mge/core/FPS.hpp"
 	"mge/core/Timer.hpp"
 
-1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\gameobject.cpp
+1455206800 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\gameobject.cpp
 	<cassert>
 	<iostream>
 	<glm.hpp>
@@ -3207,7 +3207,8 @@
 	"BoxCollider.h"
 	<iostream>
 
-1455186647 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.h
+1455198406 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.h
+	<glm.hpp>
 	<Collider.h>
 
 1455186647 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collider.h
@@ -3257,7 +3258,7 @@
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
-1455195179 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\mgedemo.cpp
+1455207275 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\mgedemo.cpp
 	<iostream>
 	<string>
 	"mge/core/Renderer.hpp"
@@ -3287,6 +3288,8 @@
 	"mge/behaviours/KeysBehaviour2.hpp"
 	"mge/behaviours/FPController.h"
 	"mge/behaviours/BoxBehaviour.h"
+	"mge/behaviours/DoorBehaviour.h"
+	"mge/behaviours/TriggerBehaviour.h"
 	"mge/behaviours/FPCamera.h"
 	"mge/behaviours/LookAt.hpp"
 	"mge/behaviours/Orbit.hpp"
@@ -3302,13 +3305,41 @@
 	<glm.hpp>
 	"Color.h"
 
-1455194588 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\boxbehaviour.cpp
+1455201843 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\boxbehaviour.cpp
 	"BoxBehaviour.h"
 	<glm.hpp>
 	"mge/core/GameObject.hpp"
 	<SFML/Graphics.hpp>
 
-1455193581 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\boxbehaviour.h
+1455201255 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\boxbehaviour.h
+	<glm.hpp>
+	"mge/behaviours/AbstractBehaviour.hpp"
+	<SFML/Graphics.hpp>
+
+1455198406 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collision.cpp
+	"Collision.h"
+
+1455198406 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collision.h
+
+1455204160 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\triggerbehaviour.cpp
+	"TriggerBehaviour.h"
+	<glm.hpp>
+	"mge/core/GameObject.hpp"
+	<SFML/Graphics.hpp>
+
+1455203501 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\triggerbehaviour.h
+	<glm.hpp>
+	"mge/behaviours/AbstractBehaviour.hpp"
+	"mge/behaviours/DoorBehaviour.h"
+	<SFML/Graphics.hpp>
+
+1455205780 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\doorbehaviour.cpp
+	"DoorBehaviour.h"
+	<glm.hpp>
+	"mge/core/GameObject.hpp"
+	<SFML/Graphics.hpp>
+
+1455205489 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\doorbehaviour.h
 	<glm.hpp>
 	"mge/behaviours/AbstractBehaviour.hpp"
 	<SFML/Graphics.hpp>

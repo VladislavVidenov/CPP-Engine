@@ -9,6 +9,7 @@ FPCamera::FPCamera(float pMoveSpeed, float pTurnSpeed, GameObject * pPlayer,sf::
     _turnSpeed = pTurnSpeed;
     _player = pPlayer;
     _window = pWindow;
+
 }
 
 FPCamera::~FPCamera()
@@ -16,6 +17,7 @@ FPCamera::~FPCamera()
     //dtor
 }
 void FPCamera::update(float pStep){
+
     glm::mat4 ownerTransform = _owner->getTransform();
 
     sf::Vector2i mouseVector = sf::Mouse::getPosition();
@@ -33,6 +35,4 @@ void FPCamera::update(float pStep){
     if (angle<=80){
         _owner->setTransform(ownerTransform);
     }
-
-
 }

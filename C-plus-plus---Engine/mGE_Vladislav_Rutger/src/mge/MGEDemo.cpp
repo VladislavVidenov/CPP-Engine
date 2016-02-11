@@ -37,6 +37,9 @@ using namespace std;
 #include "mge/behaviours/KeysBehaviour2.hpp"
 #include "mge/behaviours/FPController.h"
 #include "mge/behaviours/BoxBehaviour.h"
+#include "mge/behaviours/DoorBehaviour.h"
+
+#include "mge/behaviours/TriggerBehaviour.h"
 #include "mge/behaviours/FPCamera.h"
 #include "mge/behaviours/LookAt.hpp"
 #include "mge/behaviours/Orbit.hpp"
@@ -161,8 +164,8 @@ void MGEDemo::_initializeScene()
     ((PointLightAttenuationMaterial*)pointAttenuationMat)->setGlobalAmbientColor(glm::vec3(0,0.5f,0) * ambientIntensity);
  //==========================================================================================================================================================================================================================//
 
-
-
+    DoorBehaviour * doorBehaviour = new DoorBehaviour();
+//
 
     /**
          Different light implementations, best work if object is added alone in scene !!!!
@@ -304,7 +307,7 @@ room = new GameObject ("room", glm::vec3(0,0,0));
     roof->setMaterial(textureMaterial2);
     _world->add(roof);
 
-       spikes = new GameObject ("spikes", glm::vec3(0,0,0));
+    spikes = new GameObject ("spikes", glm::vec3(0,0,0));
     spikes->setMesh(spikesMesh);
     spikes->setMaterial(textureMaterial2);
     _world->add(spikes);
@@ -330,12 +333,15 @@ room = new GameObject ("room", glm::vec3(0,0,0));
     GameObject* door = new GameObject ("door", glm::vec3(4,1,0));
     door ->setMesh (cubeMeshF);
     door ->setMaterial(greenMaterial);
+    door->setBehaviour(doorBehaviour);
+    doorBehaviour->InitializePositions(glm::vec3(0,2.0f,0));
     _world->add(door );
     door ->scale(glm::vec3(0.2f,1.0f,0.5f));
 
-    GameObject* trigger = new GameObject ("trigger", glm::vec3(1,1,0));
+    GameObject* trigger = new GameObject ("trigger", glm::vec3(2,.25f,0));
     trigger ->setMesh (cubeMeshF);
     trigger ->setMaterial(blueMaterial);
+    trigger->setBehaviour(new TriggerBehaviour(box, doorBehaviour));
     _world->add(trigger );
     trigger ->scale(glm::vec3(0.2f));
 
@@ -385,10 +391,10 @@ room = new GameObject ("room", glm::vec3(0,0,0));
 
 
     //Add Lights
-    _world->AddLight(dirLight);
-    _world->AddLight(light);
-    _world->AddLight(light2);
-    _world->AddLight(light3);
+//    _world->AddLight(dirLight);
+//    _world->AddLight(light);
+//    _world->AddLight(light2);
+//    _world->AddLight(light3);
    // _world->AddLight(light4);
     //======================================================================================
     //PHYSICS TESTS
@@ -418,8 +424,8 @@ void MGEDemo::_render() {
    // ((PointLightAttenuationMaterial*)pointAttenuationMat)->setLightPos(light2->getWorldPosition());
     AbstractGame::_render();
     _updateHud();
-    //    std::cout<<plane2->getWorldPosition()<<std::endl;
-         std::cout<<box->getWorldPosition()<<std::endl;
+
+    std::cout<<plane2->getLocalPosition()<<std::endl;
 
    // _world->renderDebugInfo();
 }

@@ -149,15 +149,15 @@ glm::mat4& GameObject::getWorldTransform()
 }
 glm::vec3 GameObject::getForward()
 {
-    return glm::vec3(-_transform[2]);
+    return  glm::vec3(-_transform[2]);
 }
 glm::vec3 GameObject::getRight()
 {
-    return glm::vec3(_transform[0]);
+    return glm::normalize(glm::vec3(_transform[0]));
 }
 glm::vec3 GameObject::getUp()
 {
-    return glm::vec3(_transform[1]);
+    return glm::normalize(glm::vec3(_transform[1]));
 }
 
 ////////////

@@ -17,7 +17,6 @@ BoxBehaviour::~BoxBehaviour()
 }
 
 void BoxBehaviour::update(float pStep){
-    std::cout<<_isCarried<<std::endl;
   if (glm::distance(_owner->getWorldPosition(), _player->getWorldPosition())<2.0f){
 
     if (!sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
