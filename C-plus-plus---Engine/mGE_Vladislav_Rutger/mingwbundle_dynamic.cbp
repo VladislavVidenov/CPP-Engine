@@ -129,6 +129,8 @@
 		<Unit filename="src/mge/core/collision/BoxCollider.h" />
 		<Unit filename="src/mge/core/collision/Collider.cpp" />
 		<Unit filename="src/mge/core/collision/Collider.h" />
+		<Unit filename="src/mge/core/collision/Collision.cpp" />
+		<Unit filename="src/mge/core/collision/Collision.h" />
 		<Unit filename="src/mge/core/collision/SphereCollider.cpp" />
 		<Unit filename="src/mge/core/collision/SphereCollider.h" />
 		<Unit filename="src/mge/core/light/DirectionalLight.cpp" />
