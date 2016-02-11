@@ -47,16 +47,11 @@ uniform sampler2D matDiffuse;
 uniform sampler2D normalMap;
 
 
-
-//normal mapping
+in vec3 vertices;
+in vec2 uvs;
 in vec3 verticesTangent;
 in vec3 camPosTangent;
 in vec3 lightPosTangent;
-in vec3 vertices;
-in vec2 uvs;
-//in vec3 wTangent;
-//in vec3 wBitangent;
-//in vec3 normals;
 
 out vec4 fragment_color;
 
@@ -66,7 +61,7 @@ void main( void )
 
     vec3 normal = texture(normalMap, uvs).rgb;
     normal = normalize(normal * 2.0 - 1.0);
-    //normal = normalize(normal * 2.0 - 1.0);
+
 
     vec3 color = texture(matDiffuse, uvs).rgb;
     vec3 ambient = 0.1 * color;

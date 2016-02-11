@@ -180,18 +180,19 @@ Mesh* Mesh::load(string pFileName)
 
 						if(i == 2)
                         {
-                            int vertSize = mesh->_vertices.size();
-                            int uvsSize = mesh->_uvs.size();
+                           // int vertSize = mesh->_vertices.size();
+                          //  int uvsSize = mesh->_uvs.size();
+                            int index = mesh->_indices.size();
                            // cout << "1 - > " << mesh->_vertices[vertSize - 2] << endl;
                           //  cout << "2 - > " << mesh->_vertices[vertSize - 1] << endl;
                            // cout << "3 - > " << mesh->_vertices[vertSize] << endl;
-                            glm::vec3 v1 = mesh->_vertices[vertSize - 2];
-                            glm::vec3 v2 = mesh->_vertices[vertSize - 1];
-                            glm::vec3 v3 = mesh->_vertices[vertSize];
+                            glm::vec3 v1 = mesh->_vertices[mesh->_indices[index-3]];
+                            glm::vec3 v2 = mesh->_vertices[mesh->_indices[index-2]];
+                            glm::vec3 v3 = mesh->_vertices[mesh->_indices[index-1]];
 
-                            glm::vec2 uv1 = mesh->_uvs[uvsSize - 2];
-                            glm::vec2 uv2 = mesh->_uvs[uvsSize - 1];
-                            glm::vec2 uv3 = mesh->_uvs[uvsSize];
+                            glm::vec2 uv1 = mesh->_uvs[mesh->_indices[index-3]];
+                            glm::vec2 uv2 = mesh->_uvs[mesh->_indices[index-2]];
+                            glm::vec2 uv3 = mesh->_uvs[mesh->_indices[index-1]];
 
                             // Triangle sides.
                             glm::vec3 edge1 = v2 - v1;
@@ -225,8 +226,9 @@ Mesh* Mesh::load(string pFileName)
                                 mesh->_bitangent.push_back(bitangent);
                                 }else
                                 {
+
                                     mesh->_tangent[indexArray[j]] =  (mesh->_tangent[indexArray[j]] + tangent) *.5f;
-                                    mesh->_bitangent[indexArray[j]] =  (mesh->_bitangent[indexArray[j]] + bitangent * .5f);
+                                    mesh->_bitangent[indexArray[j]] =  (mesh->_bitangent[indexArray[j]] + bitangent )* .5f;
                                 }
                             }
 
