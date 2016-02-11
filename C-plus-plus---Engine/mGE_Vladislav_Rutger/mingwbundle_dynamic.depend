@@ -2884,7 +2884,7 @@
 	"mge/behaviours/AbstractBehaviour.hpp"
 	<SFML/Graphics.hpp>
 
-1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.cpp
+1455187699 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.cpp
 	<glm.hpp>
 	"mge/behaviours/FPController.h"
 	"mge/core/GameObject.hpp"
@@ -3256,4 +3256,60 @@
 1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturenormalmaterial.hpp
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
+
+1455195179 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\mgedemo.cpp
+	<iostream>
+	<string>
+	"mge/core/Renderer.hpp"
+	"mge/core/Mesh.hpp"
+	"mge/core/World.hpp"
+	"mge/core/FPS.hpp"
+	"mge/core/Camera.hpp"
+	"mge/core/GameObject.hpp"
+	"Light.h"
+	"DirectionalLight.h"
+	"PointLight.h"
+	"SpotLight.h"
+	"mge/materials/AbstractMaterial.hpp"
+	"mge/materials/ColorMaterial.hpp"
+	"mge/materials/TerrainMaterial.hpp"
+	"mge/materials/TextureMaterial.hpp"
+	"mge/materials/VertexLitColorMaterial.hpp"
+	"mge/materials/FragLitColorMaterial.hpp"
+	"mge/materials/PointLightMaterial.hpp"
+	"mge/materials/PointLightAttenuationMaterial.hpp"
+	"mge/materials/TextureLitMaterial.hpp"
+	"mge/materials/WobblyMaterial.hpp"
+	"mge/materials/TextureNormalMaterial.hpp"
+	"mge/materials/SpotLightMaterial.hpp"
+	"mge/behaviours/RotatingBehaviour.hpp"
+	"mge/behaviours/KeysBehaviour.hpp"
+	"mge/behaviours/KeysBehaviour2.hpp"
+	"mge/behaviours/FPController.h"
+	"mge/behaviours/BoxBehaviour.h"
+	"mge/behaviours/FPCamera.h"
+	"mge/behaviours/LookAt.hpp"
+	"mge/behaviours/Orbit.hpp"
+	"Color.h"
+	"Collider.h"
+	"BoxCollider.h"
+	"SphereCollider.h"
+	"mge/util/DebugHud.hpp"
+	"mge/config.hpp"
+	"mge/MGEDemo.hpp"
+
+1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\color.h
+	<glm.hpp>
+	"Color.h"
+
+1455194588 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\boxbehaviour.cpp
+	"BoxBehaviour.h"
+	<glm.hpp>
+	"mge/core/GameObject.hpp"
+	<SFML/Graphics.hpp>
+
+1455193581 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\boxbehaviour.h
+	<glm.hpp>
+	"mge/behaviours/AbstractBehaviour.hpp"
+	<SFML/Graphics.hpp>
 

@@ -36,6 +36,7 @@ using namespace std;
 #include "mge/behaviours/KeysBehaviour.hpp"
 #include "mge/behaviours/KeysBehaviour2.hpp"
 #include "mge/behaviours/FPController.h"
+#include "mge/behaviours/BoxBehaviour.h"
 #include "mge/behaviours/FPCamera.h"
 #include "mge/behaviours/LookAt.hpp"
 #include "mge/behaviours/Orbit.hpp"
@@ -75,6 +76,8 @@ PointLight* light2;
 GameObject* pilars ;
 GameObject* roof ;
 GameObject* spikes ;
+
+GameObject* box;
 //build the game _world
 void MGEDemo::_initializeScene()
 {
@@ -131,6 +134,11 @@ void MGEDemo::_initializeScene()
                                                              Texture::load (config::MGE_TEXTURE_PATH+"splatmap.png"),
                                                              Texture::load (config::MGE_TEXTURE_PATH+"heightmap.png"));
     AbstractMaterial* textureMaterial2 = new TextureMaterial (Texture::load (config::MGE_TEXTURE_PATH+"bricks.jpg"));
+
+    AbstractMaterial * blueMaterial = new ColorMaterial(glm::vec3(0,0,1));
+    AbstractMaterial * redMaterial = new ColorMaterial(glm::vec3(1,0,0));
+    AbstractMaterial * greenMaterial = new ColorMaterial(glm::vec3(0,1,0));
+    AbstractMaterial * maroonMaterial = new ColorMaterial(Color::Maroon);
 
     float ambientIntensity = 0.2f;
 
@@ -256,24 +264,25 @@ void MGEDemo::_initializeScene()
 /** Wobble , nothat much
 
 
+*/
 
 
 
 
-
-    Camera* camera = new Camera ("camera", glm::vec3(0,1,-5));
+    Camera* camera = new Camera ("camera", glm::vec3(0,0,0));
     _world->add(camera);
     _world->setMainCamera(camera);
 
 
     plane2 = new GameObject ("plane2", glm::vec3(0,0,0));
     plane2->setMesh(cubeMeshF);
-    plane2->setMaterial(textureMaterial);
-    plane2->setBehaviour(new FPController(1.0f,1.0f,camera,FPController::InputType::WASD));
+    plane2->setMaterial(maroonMaterial);
+    plane2->setBehaviour(new FPController(3.0f,1.0f,camera,FPController::InputType::WASD));
     plane2->scale(glm::vec3(.1));
     _world->add(plane2);
 
     camera->setParent(plane2);
+    camera->setLocalPosition(glm::vec3(0,1,0));
     camera->setBehaviour(new FPCamera(1.0f,1.0f,plane2,_window));
 
 //    GameObject* cube = new GameObject ("cube", glm::vec3(0,0,0));
@@ -281,7 +290,7 @@ void MGEDemo::_initializeScene()
 //    cube->setMaterial(textureMaterial);
 //    cube->scale(glm::vec3(1));
 //    _world->add(cube);
-*/
+
     /** GameObject* plane2
             Multiple lights
 */
@@ -305,23 +314,38 @@ room = new GameObject ("room", glm::vec3(0,0,0));
     pilars->setMaterial(textureMaterial2);
     _world->add(pilars);
 
-    GameObject* teapot = new GameObject ("teapot", glm::vec3(0,0,0));
-    teapot->setMesh (teapotMeshS);
-    teapot->setMaterial(textureLit);
-    teapot->setBehaviour (new KeysBehaviour());
-    _world->add(teapot);
+//    GameObject* teapot = new GameObject ("teapot", glm::vec3(0,0,0));
+//    teapot->setMesh (teapotMeshS);
+//    teapot->setMaterial(textureLit);
+//    teapot->setBehaviour (new KeysBehaviour());
+//    _world->add(teapot);
+//
+    box = new GameObject ("box", glm::vec3(-2,0.25f,1));
+    box->setMesh (cubeMeshF);
+    box->setMaterial(redMaterial);
+    box->setBehaviour(new BoxBehaviour(plane2));
+    _world->add(box);
+    box->scale(glm::vec3(0.2f));
 
-    GameObject* cube = new GameObject ("cube", glm::vec3(2,2,0));
-    cube->setMesh (t_Model);
-    cube->setMaterial(textureLit);
-    _world->add(cube);
-    cube->scale(glm::vec3(0.1f));
+    GameObject* door = new GameObject ("door", glm::vec3(4,1,0));
+    door ->setMesh (cubeMeshF);
+    door ->setMaterial(greenMaterial);
+    _world->add(door );
+    door ->scale(glm::vec3(0.2f,1.0f,0.5f));
 
-    Camera* camera = new Camera ("camera", glm::vec3(0,5,3));
-    camera->rotate(glm::radians(-45.f),glm::vec3(1,0,0));
-    camera->setBehaviour(new Orbit(cube,25.f,85.f,5.f));
-    _world->add(camera);
-    _world->setMainCamera(camera);
+    GameObject* trigger = new GameObject ("trigger", glm::vec3(1,1,0));
+    trigger ->setMesh (cubeMeshF);
+    trigger ->setMaterial(blueMaterial);
+    _world->add(trigger );
+    trigger ->scale(glm::vec3(0.2f));
+
+
+
+//    Camera* camera = new Camera ("camera", glm::vec3(0,5,3));
+//    camera->rotate(glm::radians(-45.f),glm::vec3(1,0,0));
+//    camera->setBehaviour(new Orbit(cube,25.f,85.f,5.f));
+//    _world->add(camera);
+//    _world->setMainCamera(camera);
 
 
     //{ LIGHTS
@@ -336,7 +360,7 @@ room = new GameObject ("room", glm::vec3(0,0,0));
     light->setMaterial(lightMaterial);
     _world->add(light);
     light->scale(glm::vec3(0.2f,0.2f,0.2f));
-    light->setBehaviour(new KeysBehaviour2());
+    //light->setBehaviour(new KeysBehaviour2());
 
     light2 = new PointLight("PointLight2", glm::vec3(3.f,0,0),glm::vec3(.1f),Color::Red,Color::Red/3.3f);
     AbstractMaterial* lightMaterial2 = new ColorMaterial(light2->diffuse);
@@ -344,7 +368,7 @@ room = new GameObject ("room", glm::vec3(0,0,0));
     light2->setMaterial(lightMaterial2);
     _world->add(light2);
     light2->scale(glm::vec3(0.2f,0.2f,0.2f));
-    light2->setBehaviour(new KeysBehaviour2());
+   // light2->setBehaviour(new KeysBehaviour2());
 
     Light *light3 = new SpotLight("SpotLight",glm::vec3(0,4,0),glm::vec3(.1f),glm::vec3(.8f),glm::vec3(.5f));
     AbstractMaterial* lightMaterial3 = new ColorMaterial(light3->diffuse);
@@ -352,7 +376,7 @@ room = new GameObject ("room", glm::vec3(0,0,0));
     light3->setMaterial(lightMaterial3);
     _world->add(light3);
     light3->scale(glm::vec3(0.2f,0.2f,0.2f));
-    light3->setBehaviour(new KeysBehaviour2());
+  //  light3->setBehaviour(new KeysBehaviour2());
     //}
 
 
@@ -394,6 +418,8 @@ void MGEDemo::_render() {
    // ((PointLightAttenuationMaterial*)pointAttenuationMat)->setLightPos(light2->getWorldPosition());
     AbstractGame::_render();
     _updateHud();
+        std::cout<<plane2->getWorldPosition()<<std::endl;
+         std::cout<<box->getWorldPosition()<<std::endl;
 
    // _world->renderDebugInfo();
 }
