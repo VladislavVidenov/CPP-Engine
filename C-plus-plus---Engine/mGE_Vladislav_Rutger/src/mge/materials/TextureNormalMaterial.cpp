@@ -68,7 +68,7 @@ void TextureNormalMaterial::render(World* pWorld, GameObject* pGameObject, Camer
             case Light::LightType::Point:
 //                pointCount++;
 //                std::string num = "pointLight[" + std::to_string(pointCount - 1) + "].";
-                    glUniform3fv(_shader->getUniformLocation("lightPosition"),1, glm::value_ptr(((DirectionalLight*)temp)->getWorldPosition()));
+//
 //                glUniform3fv(_shader->getUniformLocation(num + "position"),1, glm::value_ptr(temp->getWorldPosition()));
 //                glUniform3fv(_shader->getUniformLocation(num + "ambient"),1, glm::value_ptr(temp->ambient));
 //                glUniform3fv(_shader->getUniformLocation(num + "diffuse"),1,glm::value_ptr(temp->diffuse));

@@ -54,7 +54,7 @@ uniform Material material;
 uniform sampler2D matDiffuse;
 uniform sampler2D matSpecular;
 uniform vec3 cameraPosition;
-
+uniform bool specMapOn;
 
 in vec3 vertices;
 in vec3 normals;
@@ -92,7 +92,14 @@ vec3 getDirectionalLight(DirLight light, vec3 n, vec3 view)
 
     vec3 ambientTerm = light.ambient * vec3(texture(matDiffuse, uvs));
     vec3 diffuseTerm = light.diffuse * diffuse * vec3(texture(matDiffuse, uvs));
-    vec3 specularTerm = light.specular * specular * vec3(texture(matSpecular, uvs));
+    vec3 specularTerm;
+    if(specMapOn)
+    {
+         specularTerm = light.specular * specular * vec3(texture(matSpecular, uvs));
+    }else{
+        specularTerm = light.specular * specular *  vec3(0.1);
+
+    }
 
     return (ambientTerm + diffuseTerm + specularTerm);
 }
@@ -113,7 +120,14 @@ vec3 getPointLight(PointLight light, vec3 n, vec3 view)
    //specular - BLINN
    // vec3 reflectDirection = reflect(-lightDirection, n);
    // float specular = pow(max(dot(reflectDirection, view), 0.f), material.shininess);
-    vec3 specularTerm = light.specular * specular * vec3(texture(matSpecular, uvs));
+    vec3 specularTerm;
+    if(specMapOn)
+    {
+         specularTerm = light.specular * specular * vec3(texture(matSpecular, uvs));
+    }else{
+        specularTerm = light.specular * specular *  vec3(0.1);
+
+    }
     //Attenuation
     float distance = length(light.position - vertices);
     float attenuation = 1.0f / (light.constant + light.linear * distance + light.quadratic * pow(distance,2));
@@ -139,7 +153,14 @@ vec3 getSpotLight(SpotLight light, vec3 n, vec3 view)
 
     vec3 reflectDirection = reflect(-lightDirection, n);
     float specular = pow(max(dot(reflectDirection, viewDirection), 0.f), material.shininess);
-    vec3 specularTerm = specular * light.specular * vec3(texture(matSpecular, uvs));
+    vec3 specularTerm;
+    if(specMapOn)
+    {
+         specularTerm = light.specular * specular * vec3(texture(matSpecular, uvs));
+    }else{
+        specularTerm = light.specular * specular * vec3(0.1);
+
+    }
 
     //attenuation
     float distance = length(light.position - vertices);

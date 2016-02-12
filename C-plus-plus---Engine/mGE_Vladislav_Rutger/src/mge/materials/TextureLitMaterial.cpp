@@ -12,8 +12,8 @@
 
 ShaderProgram* TextureLitMaterial::_shader = NULL;
 
-TextureLitMaterial::TextureLitMaterial(Texture * pDiffuseTexture,Texture * pSpecularTexture, float pShininess):
-    _diffuseTexture(pDiffuseTexture),_specularTexture(pSpecularTexture),_shininess(pShininess)
+TextureLitMaterial::TextureLitMaterial(Texture * pDiffuseTexture, float pShininess):
+    _diffuseTexture(pDiffuseTexture),_shininess(pShininess),specMapOn(false)
 {
     _lazyInitializeShader();
 }
@@ -41,11 +41,11 @@ void TextureLitMaterial::render(World* pWorld, GameObject* pGameObject, Camera* 
     //setup texture slot 0
 
     _shader->setTexture(_shader->getUniformLocation("matDiffuse"),0,_diffuseTexture->getId());
-    _shader->setTexture(_shader->getUniformLocation("matSpecular"),1,_specularTexture->getId());
-
+    //_shader->setTexture(_shader->getUniformLocation("matSpecular"),1,_specularTexture->getId());
+    glUniform1i(_shader->getUniformLocation("specMapOn"),0);
     //set material uniforms
     glUniform1i (_shader->getUniformLocation("matDiffuse"), 0);
-    glUniform1i (_shader->getUniformLocation("matSpecular"), 1);
+   // glUniform1i (_shader->getUniformLocation("matSpecular"), 1);
    // glUniform3fv (_shader->getUniformLocation("material.specular"),1, glm::value_ptr(_specular));
     glUniform1f (_shader->getUniformLocation("material.shininess"), _shininess);
     glUniform3fv(_shader->getUniformLocation("cameraPosition"),1, glm::value_ptr( pCamera->getWorldPosition()));

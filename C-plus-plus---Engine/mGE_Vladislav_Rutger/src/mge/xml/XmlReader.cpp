@@ -1,17 +1,17 @@
-//#include "XmlReader.h"
-//
-//XmlReader::XmlReader()
-//{
-//    //ctor
-//}
-//
-//XmlReader::~XmlReader()
-//{
-//    //dtor
-//}
-//
-//void XmlReader::Read()
-//{
+#include "XmlReader.h"
+
+XmlReader::XmlReader()
+{
+    //ctor
+}
+
+XmlReader::~XmlReader()
+{
+    //dtor
+}
+
+void XmlReader::Read()
+{
 //     int counter;
 //
 //        if(!doc.load_file("Assets/SceneData.xml")) std::cout<<"Couldn't load the file"<<std::endl;
@@ -44,6 +44,6 @@
 //            _colliderOffset.push_back(glm::vec3(StringToNumber<float>(_objectProperties[5].attribute("x").value()),
 //                                                StringToNumber<float>(_objectProperties[5].attribute("y").value()),
 //                                                StringToNumber<float>(_objectProperties[5].attribute("z").value())));
-//        }
-//
-//}
+     //   }
+
+}

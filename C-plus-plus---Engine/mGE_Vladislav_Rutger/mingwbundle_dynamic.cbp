@@ -24,6 +24,7 @@
 					<Add directory="include" />
 					<Add directory="src/mge/core/collision" />
 					<Add directory="src/mge/behaviours" />
+					<Add directory="src/mge/xml" />
 				</Compiler>
 				<Linker>
 					<Add library="glew32" />
@@ -169,6 +170,11 @@
 		<Unit filename="src/mge/util/Color.h" />
 		<Unit filename="src/mge/util/DebugHud.cpp" />
 		<Unit filename="src/mge/util/DebugHud.hpp" />
+		<Unit filename="src/mge/xml/XmlReader.cpp" />
+		<Unit filename="src/mge/xml/XmlReader.h" />
+		<Unit filename="src/mge/xml/pugiconfig.hpp" />
+		<Unit filename="src/mge/xml/pugixml.cpp" />
+		<Unit filename="src/mge/xml/pugixml.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

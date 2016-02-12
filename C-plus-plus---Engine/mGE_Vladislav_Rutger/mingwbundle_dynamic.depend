@@ -2089,7 +2089,7 @@
 1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\spotlight.h
 	<Light.h>
 
-1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\mesh.cpp
+1455206215 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\mesh.cpp
 	"mge/core/Mesh.hpp"
 	<iostream>
 	<map>
@@ -2224,7 +2224,7 @@
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
-1455107630 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.cpp
+1455272278 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.cpp
 	<glm.hpp>
 	"mge/materials/TextureLitMaterial.hpp"
 	"mge/core/Texture.hpp"
@@ -2236,7 +2236,7 @@
 	"PointLight.h"
 	"mge/config.hpp"
 
-1455106285 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.hpp
+1455272198 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.hpp
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
@@ -2252,7 +2252,7 @@
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
-1455106115 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturenormalmaterial.cpp
+1455272173 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturenormalmaterial.cpp
 	<glm.hpp>
 	"mge/materials/TextureNormalMaterial.hpp"
 	"mge/core/Texture.hpp"
@@ -2308,7 +2308,7 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1455121681 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\mgedemo.cpp
+1455272454 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\mgedemo.cpp
 	<iostream>
 	<string>
 	"mge/core/Renderer.hpp"
@@ -2337,6 +2337,7 @@
 	"mge/behaviours/KeysBehaviour.hpp"
 	"mge/behaviours/KeysBehaviour2.hpp"
 	"mge/behaviours/FPController.h"
+	"mge/behaviours/BoxBehaviour.h"
 	"mge/behaviours/FPCamera.h"
 	"mge/behaviours/LookAt.hpp"
 	"mge/behaviours/Orbit.hpp"
@@ -2801,7 +2802,7 @@
 	"mge/behaviours/AbstractBehaviour.hpp"
 	<SFML/Graphics.hpp>
 
-1455065240 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.cpp
+1455199692 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.cpp
 	<glm.hpp>
 	"mge/behaviours/FPController.h"
 	"mge/core/GameObject.hpp"
@@ -2816,25 +2817,26 @@
 
 1455065240 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\include\sound.h
 
-1455115347 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.cpp
+1455183732 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.cpp
 	"BoxCollider.h"
 	<iostream>
 
-1455114184 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.h
+1455195184 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.h
+	<glm.hpp>
 	<Collider.h>
 
-1455115109 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collider.h
+1455183732 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collider.h
 
-1455115391 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collider.cpp
+1455183732 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collider.cpp
 	"Collider.h"
 	"BoxCollider.h"
 	"SphereCollider.h"
 	<iostream>
 
-1455114514 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\spherecollider.h
+1455183732 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\spherecollider.h
 	<Collider.h>
 
-1455115359 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\spherecollider.cpp
+1455183732 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\spherecollider.cpp
 	"SphereCollider.h"
 	<iostream>
 
@@ -3343,4 +3345,55 @@
 	<glm.hpp>
 	"mge/behaviours/AbstractBehaviour.hpp"
 	<SFML/Graphics.hpp>
+
+1455193443 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collision.cpp
+	"Collision.h"
+
+1455193443 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collision.h
+
+1425466072 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\xml\pugixml.cpp
+	"pugixml.hpp"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<assert.h>
+	<wchar.h>
+	<math.h>
+	<float.h>
+	<setjmp.h>
+	<istream>
+	<ostream>
+	<string>
+	<new>
+	<stdint.h>
+
+1425466072 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\xml\pugixml.hpp
+	"pugiconfig.hpp"
+	<stddef.h>
+	<exception>
+	<iterator>
+	<iosfwd>
+	<string>
+
+1425466072 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\xml\pugiconfig.hpp
+
+1455208529 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\boxbehaviour.cpp
+	"BoxBehaviour.h"
+	<glm.hpp>
+	"mge/core/GameObject.hpp"
+	<SFML/Graphics.hpp>
+
+1455208529 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\boxbehaviour.h
+	<glm.hpp>
+	"mge/behaviours/AbstractBehaviour.hpp"
+	<SFML/Graphics.hpp>
+
+1455270479 source:d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\xml\xmlreader.cpp
+	"XmlReader.h"
+
+1455270530 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\xml\xmlreader.h
+	"pugixml.hpp"
+	<vector>
+	"glm.hpp"
+	"mge/core/GameObject.hpp"
 

@@ -11,12 +11,12 @@
 class TextureLitMaterial : public AbstractMaterial
 {
     public:
-        TextureLitMaterial(Texture * pDiffuseTexture,Texture * pSpecularTexture, float pShininess);
+        TextureLitMaterial(Texture * pDiffuseTexture, float pShininess);
         virtual ~TextureLitMaterial ();
         virtual void render(World* pWorld, GameObject* pGameObject, Camera* pCamera);
 
         void setDiffuseTexture (Texture* pDiffuseTexture);
-
+        bool specMapOn;
     protected:
     private:
         static ShaderProgram* _shader;
