@@ -17,6 +17,8 @@ FPController::~FPController()
 
 }
 bool _grounded = true;
+bool _canPress = false;
+
 void FPController::update(float pStep){
 
     glm::vec3 translate;
@@ -32,6 +34,15 @@ void FPController::update(float pStep){
         if ( sf::Keyboard::isKeyPressed( sf::Keyboard::Down ) ) translate -= camForward * 0.1f* _moveSpeed;
         if ( sf::Keyboard::isKeyPressed( sf::Keyboard::Left ) ) translate -= camRight * 0.1f * _moveSpeed;
         if ( sf::Keyboard::isKeyPressed( sf::Keyboard::Right ) )translate += camRight * 0.1f* _moveSpeed;
+
+          if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+                _canPress = true;
+            }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space ) && _canPress && _grounded) {
+            translate.y += 4;
+            _grounded = false;
+            _canPress = false;
+        }
         break;
     case InputType::WASD:
         if ( sf::Keyboard::isKeyPressed( sf::Keyboard::W ) ) translate += camForward * 0.1f* _moveSpeed;
@@ -39,7 +50,14 @@ void FPController::update(float pStep){
         if ( sf::Keyboard::isKeyPressed( sf::Keyboard::A ) ) translate -= camRight * 0.1f* _moveSpeed ;
         if ( sf::Keyboard::isKeyPressed( sf::Keyboard::D ) ) translate += camRight * 0.1f* _moveSpeed;
 
-        if ( sf::Keyboard::isKeyPressed( sf::Keyboard::Space ) && _grounded) {translate.y += 4; _grounded = false;}
+          if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+                _canPress = true;
+            }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space ) && _canPress && _grounded) {
+            translate.y += 4;
+            _grounded = false;
+            _canPress = false;
+        }
 
         break;
     }

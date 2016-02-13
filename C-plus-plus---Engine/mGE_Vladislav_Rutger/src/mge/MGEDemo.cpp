@@ -4,7 +4,7 @@
 using namespace std;
 
 #include "mge/core/Renderer.hpp"
-
+#include "XmlReader.h"
 #include "mge/core/Mesh.hpp"
 #include "mge/core/World.hpp"
 #include "mge/core/FPS.hpp"
@@ -74,7 +74,7 @@ void MGEDemo::initialize() {
 AbstractMaterial* pointLightMaterial;
 AbstractMaterial* pointAttenuationMat;
 PointLight* light2;
- GameObject* plane2 ;
+ GameObject* Player ;
  GameObject* room ;
 GameObject* pilars ;
 GameObject* roof ;
@@ -106,6 +106,7 @@ void MGEDemo::_initializeScene()
     Mesh* pilarsMesh = Mesh::load (config::MGE_MODEL_PATH+"Pilars.obj");
     Mesh* roofMesh = Mesh::load (config::MGE_MODEL_PATH+"Roof.obj");
     Mesh* spikesMesh = Mesh::load (config::MGE_MODEL_PATH+"Spikes.obj");
+    Mesh* CUPE = Mesh::load (config::MGE_MODEL_PATH+"CUPE.obj");
 //=====================================================================================================================================================================================================//
 
 
@@ -126,7 +127,9 @@ void MGEDemo::_initializeScene()
   //  AbstractMaterial* pistolMat = new TextureLitMaterial(Texture::load (config::MGE_TEXTURE_PATH+"pistol.png"),glm::vec3(.3f),32.f);
 
     //Texture Material + Light !
-    AbstractMaterial* textureLit = new TextureLitMaterial(Texture::load (config::MGE_TEXTURE_PATH+"test_Diffuse.png"),Texture::load (config::MGE_TEXTURE_PATH+"test_Specular.png"),32.f);
+    AbstractMaterial* wallMat = new TextureLitMaterial(Texture::load (config::MGE_TEXTURE_PATH+"test.jpg"),32.f);
+
+    AbstractMaterial* pillarMat = new TextureLitMaterial(Texture::load (config::MGE_TEXTURE_PATH+"pillar.jpg"),32.f);
     //Simple Texture material - No light
     AbstractMaterial* textureMaterial = new TextureMaterial (Texture::load (config::MGE_TEXTURE_PATH+"land.jpg"));
 
@@ -272,21 +275,21 @@ void MGEDemo::_initializeScene()
 
 
 
-    Camera* camera = new Camera ("camera", glm::vec3(0,0,0));
+    Camera* camera = new Camera ("camera", glm::vec3(-7,0,0));
     _world->add(camera);
     _world->setMainCamera(camera);
 
 
-    plane2 = new GameObject ("plane2", glm::vec3(0,0,0));
-    plane2->setMesh(cubeMeshF);
-    plane2->setMaterial(maroonMaterial);
-    plane2->setBehaviour(new FPController(3.0f,1.0f,camera,FPController::InputType::WASD));
-    plane2->scale(glm::vec3(.1f));
-    _world->add(plane2);
+    Player = new GameObject ("plane2", glm::vec3(-7,0,0));
+    Player->setMesh(cubeMeshF);
+    Player->setMaterial(maroonMaterial);
+    Player->setBehaviour(new FPController(3.0f,1.0f,camera,FPController::InputType::WASD));
+    Player->scale(glm::vec3(.1f));
+    _world->add(Player);
 
-    camera->setParent(plane2);
+    camera->setParent(Player);
     camera->setLocalPosition(glm::vec3(0,1,0));
-    camera->setBehaviour(new FPCamera(1.0f,1.0f,plane2,_window));
+    camera->setBehaviour(new FPCamera(1.0f,1.0f,Player,_window));
 
 //    GameObject* cube = new GameObject ("cube", glm::vec3(0,0,0));
 //    cube->setMesh (cubeMeshF);
@@ -297,9 +300,9 @@ void MGEDemo::_initializeScene()
     /** GameObject* plane2
             Multiple lights
 */
-room = new GameObject ("room", glm::vec3(0,0,0));
+    room = new GameObject ("room", glm::vec3(0,0,0));
     room->setMesh(roomMesh);
-    room->setMaterial(textureMaterial);
+    room->setMaterial(wallMat);
     _world->add(room);
 
      roof = new GameObject ("roof", glm::vec3(0,0,0));
@@ -314,7 +317,7 @@ room = new GameObject ("room", glm::vec3(0,0,0));
 
        pilars = new GameObject ("pilars", glm::vec3(0,0,0));
     pilars->setMesh(pilarsMesh);
-    pilars->setMaterial(textureMaterial2);
+    pilars->setMaterial(pillarMat);
     _world->add(pilars);
 
 //    GameObject* teapot = new GameObject ("teapot", glm::vec3(0,0,0));
@@ -326,7 +329,7 @@ room = new GameObject ("room", glm::vec3(0,0,0));
     box = new GameObject ("box", glm::vec3(-2,0.25f,1));
     box->setMesh (cubeMeshF);
     box->setMaterial(redMaterial);
-    box->setBehaviour(new BoxBehaviour(plane2));
+    box->setBehaviour(new BoxBehaviour(Player));
     _world->add(box);
     box->scale(glm::vec3(0.2f));
 
@@ -360,7 +363,7 @@ room = new GameObject ("room", glm::vec3(0,0,0));
 
     //Points lights
 
-    Light *light = new PointLight("PointLight1", glm::vec3(-1.f,0,0),glm::vec3(.1f),glm::vec3(1,1,1),glm::vec3(0.3f,0.3f,0.3f));
+    Light *light = new PointLight("PointLight1", glm::vec3(2,2,0),glm::vec3(.1f),glm::vec3(Color::Green),glm::vec3(0.3f));
     AbstractMaterial* lightMaterial = new ColorMaterial(light->diffuse);
     light->setMesh(cubeMeshF);
     light->setMaterial(lightMaterial);
@@ -368,20 +371,20 @@ room = new GameObject ("room", glm::vec3(0,0,0));
     light->scale(glm::vec3(0.2f,0.2f,0.2f));
     //light->setBehaviour(new KeysBehaviour2());
 
-    light2 = new PointLight("PointLight2", glm::vec3(3.f,0,0),glm::vec3(.1f),Color::Red,Color::Red/3.3f);
-    AbstractMaterial* lightMaterial2 = new ColorMaterial(light2->diffuse);
-    light2->setMesh(cubeMeshF);
-    light2->setMaterial(lightMaterial2);
+    light2 = new PointLight("PointLight2", glm::vec3(-7,2,0),glm::vec3(.1f),glm::vec3(1),glm::vec3(0.3f));
+//    AbstractMaterial* lightMaterial2 = new ColorMaterial(light2->diffuse);
+//    light2->setMesh(cubeMeshF);
+//    light2->setMaterial(lightMaterial2);
     _world->add(light2);
-    light2->scale(glm::vec3(0.2f,0.2f,0.2f));
+//    light2->scale(glm::vec3(0.2f,0.2f,0.2f));
    // light2->setBehaviour(new KeysBehaviour2());
 
-    Light *light3 = new SpotLight("SpotLight",glm::vec3(0,4,0),glm::vec3(.1f),glm::vec3(.8f),glm::vec3(.5f));
-    AbstractMaterial* lightMaterial3 = new ColorMaterial(light3->diffuse);
-    light3->setMesh(cubeMeshF);
-    light3->setMaterial(lightMaterial3);
+    Light *light3 = new SpotLight("SpotLight",glm::vec3(0,-1,0),glm::vec3(.1f),glm::vec3(Color::Red),glm::vec3(.5f));
+//    AbstractMaterial* lightMaterial3 = new ColorMaterial(light3->diffuse);
+//    light3->setMesh(cubeMeshF);
+//    light3->setMaterial(lightMaterial3);
     _world->add(light3);
-    light3->scale(glm::vec3(0.2f,0.2f,0.2f));
+//    light3->scale(glm::vec3(0.2f,0.2f,0.2f));
   //  light3->setBehaviour(new KeysBehaviour2());
     //}
 
@@ -392,9 +395,9 @@ room = new GameObject ("room", glm::vec3(0,0,0));
 
     //Add Lights
 //    _world->AddLight(dirLight);
-//    _world->AddLight(light);
-//    _world->AddLight(light2);
-//    _world->AddLight(light3);
+    _world->AddLight(light);
+    _world->AddLight(light2);
+    _world->AddLight(light3);
    // _world->AddLight(light4);
     //======================================================================================
     //PHYSICS TESTS
@@ -411,21 +414,44 @@ room = new GameObject ("room", glm::vec3(0,0,0));
     sphereCol->collide(sphereCol);
     sphereCol->collide(boxCol);
 
+    XmlReader * xmlReader = new XmlReader();
+    std::vector<GameObject * > xmlObjects;
+
+    for (auto i = xmlReader->_objectPositions.begin(); i != xmlReader->_objectPositions.end(); ++i )
+    {
+            GameObject * obj = new GameObject ("CUPE", *i);
+            obj->setMesh(CUPE);
+            obj->setMaterial(textureMaterial2);
+            cout << "loop" << endl;
+          //  _world->add(obj);
+            xmlObjects.push_back(obj);
+    }
+
+    for(int i = 0; i < xmlObjects.size(); ++i){
+        GameObject * temp = xmlObjects[i];
+        temp->scale(xmlReader->_colliderSize[i]);
+    }
+
 }
 
 void MGEDemo::CreateLights(){
 
 
 }
-
+bool won = false;
 void MGEDemo::_render() {
 
+    if(Player->getLocalPosition().x > 4.5f) won = true;
+    if(won) {
+        string winText =  " YOU WIN YAAY !";
+        _hud->setWinTextInfo(winText);
+    }
     ((PointLightMaterial*)pointLightMaterial)->setLightPos(light2->getWorldPosition());
    // ((PointLightAttenuationMaterial*)pointAttenuationMat)->setLightPos(light2->getWorldPosition());
     AbstractGame::_render();
     _updateHud();
 
-    std::cout<<plane2->getLocalPosition()<<std::endl;
+    //std::cout<<Player->getLocalPosition()<<std::endl;
 
    // _world->renderDebugInfo();
 }

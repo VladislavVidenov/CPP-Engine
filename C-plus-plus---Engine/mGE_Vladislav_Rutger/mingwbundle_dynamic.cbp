@@ -90,6 +90,8 @@
 		<Unit filename="src/mge/behaviours/AbstractBehaviour.hpp" />
 		<Unit filename="src/mge/behaviours/BoxBehaviour.cpp" />
 		<Unit filename="src/mge/behaviours/BoxBehaviour.h" />
+		<Unit filename="src/mge/behaviours/DoorBehaviour.cpp" />
+		<Unit filename="src/mge/behaviours/DoorBehaviour.h" />
 		<Unit filename="src/mge/behaviours/FPCamera.cpp" />
 		<Unit filename="src/mge/behaviours/FPCamera.h" />
 		<Unit filename="src/mge/behaviours/FPController.cpp" />
@@ -104,6 +106,8 @@
 		<Unit filename="src/mge/behaviours/Orbit.hpp" />
 		<Unit filename="src/mge/behaviours/RotatingBehaviour.cpp" />
 		<Unit filename="src/mge/behaviours/RotatingBehaviour.hpp" />
+		<Unit filename="src/mge/behaviours/TriggerBehaviour.cpp" />
+		<Unit filename="src/mge/behaviours/TriggerBehaviour.h" />
 		<Unit filename="src/mge/config.hpp" />
 		<Unit filename="src/mge/core/AbstractGame.cpp" />
 		<Unit filename="src/mge/core/AbstractGame.hpp" />

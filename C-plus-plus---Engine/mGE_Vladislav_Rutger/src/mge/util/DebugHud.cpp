@@ -33,11 +33,22 @@ void DebugHud::_createDebugHud() {
     _debugText.setFont(_font);
 	_debugText.setCharacterSize(16);
 	_debugText.setColor(sf::Color::White);
+
+    _winText.setString("");
+    _winText.setFont(_font);
+	_winText.setCharacterSize(16);
+	_winText.setColor(sf::Color::White);
+
+
 }
 
 void DebugHud::setDebugInfo(std::string pInfo) {
     _debugText.setString(pInfo);
 	_debugText.setPosition(10, 10);
+}
+void DebugHud::setWinTextInfo(std::string pInfo) {
+    _winText.setString(pInfo);
+	_winText.setPosition(_window->getSize().x / 2 , _window->getSize().y / 2);
 }
 
 void DebugHud::draw()
@@ -46,5 +57,6 @@ void DebugHud::draw()
 	glActiveTexture(GL_TEXTURE0);
     _window->pushGLStates();
     _window->draw(_debugText);
+    _window->draw(_winText);
 	_window->popGLStates();
 }

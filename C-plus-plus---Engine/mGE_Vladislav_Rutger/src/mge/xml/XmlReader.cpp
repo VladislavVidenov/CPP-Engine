@@ -1,8 +1,12 @@
 #include "XmlReader.h"
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <mge/config.hpp>
 
 XmlReader::XmlReader()
 {
-    //ctor
+    Read();
 }
 
 XmlReader::~XmlReader()
@@ -12,38 +16,67 @@ XmlReader::~XmlReader()
 
 void XmlReader::Read()
 {
-//     int counter;
-//
-//        if(!doc.load_file("Assets/SceneData.xml")) std::cout<<"Couldn't load the file"<<std::endl;
-//        pugi::xml_node root = doc.child("GameObjects");
-//
-//        mainNodes = GetNodeChildren(root);
-//
-//        for(counter=0; counter!= mainNodes.size();counter++){
-//            _objectNames.push_back(mainNodes[counter].attribute("name").value());
-//            _objectProperties = GetNodeChildren(mainNodes[counter]);
-//-
-//
-//
-//            //_objectTags.push_back(_objectProperties[0].attribute("name").value());
-//
-//            _objectTextures.push_back(_objectProperties[0].attribute("name").value());
-//
-//            _normalTextures.push_back(_objectProperties[1].attribute("name").value());
-//
-//            _objectPositions.push_back(glm::vec3(StringToNumber<float>(_objectProperties[2].attribute("x").value()),
-//                                                 StringToNumber<float>(_objectProperties[2].attribute("y").value()),
-//                                                 StringToNumber<float>(_objectProperties[2].attribute("z").value())));
-//
-//            _colliderNames.push_back(_objectProperties[3].attribute("type").value());
-//
-//            _colliderSize.push_back(glm::vec3(StringToNumber<float>(_objectProperties[4].attribute("x").value()),
-//                                              StringToNumber<float>(_objectProperties[4].attribute("y").value()),
-//                                              StringToNumber<float>(_objectProperties[4].attribute("z").value())));
-//
-//            _colliderOffset.push_back(glm::vec3(StringToNumber<float>(_objectProperties[5].attribute("x").value()),
-//                                                StringToNumber<float>(_objectProperties[5].attribute("y").value()),
-//                                                StringToNumber<float>(_objectProperties[5].attribute("z").value())));
-     //   }
+     int counter;
+  //  pugi::xml_parse_result result = ;
+    if(!_xmlFile.load_file("mge/xml/test2.xml")) std::cout<<"Couldn't load the file"<<std::endl;
 
+    pugi::xml_node root = _xmlFile.child("GameObjects");
+   // std::cout<< "ROOT XML => " << root.name() << std::endl;
+
+    _mainNodes = GetNodeChildren(root);
+   // std :: cout << "SIZE OF ROOT CHILDREN = > " << _mainNodes.size() << std::endl;
+
+    for(counter=0; counter!= _mainNodes.size();counter++)
+    {
+        std::cout<<"Read child"<<std::endl;
+        _objectNames.push_back(_mainNodes[counter].attribute("name").value());
+
+        _objectProperties = GetNodeChildren(_mainNodes[counter]);
+     //   std::cout << " object node properties =>> " << _objectProperties.size() << std::endl;
+        // std::cout<< _objectProperties[0].attribute("name").value() <<std::endl;
+
+
+     //   _objectTextures.push_back(_objectProperties[0].attribute("name").value());
+
+   //     _normalTextures.push_back(_objectProperties[1].attribute("name").value());
+
+        _objectPositions.push_back(glm::vec3(StringToNumber<float>(_objectProperties[3].attribute("X").value()),
+                                            StringToNumber<float>(_objectProperties[3].attribute("Y").value()),
+                                            StringToNumber<float>(_objectProperties[3].attribute("Z").value())));
+//
+//        _colliderNames.push_back(StringToNumber<float>(_objectProperties[4].attribute("Type").value()));
+//
+//
+//
+//        _colliderOffset.push_back(glm::vec3(StringToNumber<float>(_objectProperties[5].attribute("x").value()),
+//                                            StringToNumber<float>(_objectProperties[5].attribute("y").value()),
+//                                            StringToNumber<float>(_objectProperties[5].attribute("z").value())));
+//
+        _colliderSize.push_back(glm::vec3(StringToNumber<float>(_objectProperties[6].attribute("X").value()),
+                                            StringToNumber<float>(_objectProperties[6].attribute("Y").value()),
+                                            StringToNumber<float>(_objectProperties[6].attribute("Z").value())));
+    }
+
+
+}
+
+std::vector<pugi::xml_node> XmlReader::GetNodeChildren(pugi::xml_node node)
+{
+        std::vector<pugi::xml_node> values;
+
+        for (node = node.first_child(); node; node = node.next_sibling()) {
+            values.push_back(node);
+        }
+
+        return values;
+}
+
+template<typename T>
+T XmlReader::StringToNumber(const std::string& numberAsString)
+{
+    T value;
+
+    std::stringstream stream(numberAsString);
+    stream >> value;
+    return value;
 }
