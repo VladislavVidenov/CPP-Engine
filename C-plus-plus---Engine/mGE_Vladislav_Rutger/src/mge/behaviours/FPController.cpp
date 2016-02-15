@@ -62,13 +62,14 @@ void FPController::update(float pStep){
     }
 
     _owner->translate(translate); // - >> Move character on input.
-  //  _owner->translate(glm::vec3(0,-0.5f,0)); // -> small gravity;
-//    glm::vec3 ownerLocPos  = _owner->getLocalPosition();
+    _owner->translate(glm::vec3(0,-0.5f,0)); // -> small gravity;
+    glm::vec3 ownerLocPos  = _owner->getLocalPosition();
 //    if (!(ownerLocPos.x > -1.1f && ownerLocPos.x<1.1f && ownerLocPos.z >-1.1f && ownerLocPos.z<1.1f)){
-//         if(ownerLocPos.y > 1 && ownerLocPos.y < 1.5f) _grounded = true;
+//
 //        if(ownerLocPos.y <= 1) _owner->setLocalPosition(glm::vec3(ownerLocPos.x,1,ownerLocPos.z));
 //    }
-//
+     if(ownerLocPos.y >= 1 && ownerLocPos.y < 1.5f) _grounded = true;
+     if(ownerLocPos.y <= 1) _owner->setLocalPosition(glm::vec3(ownerLocPos.x,1,ownerLocPos.z));
 //    if(ownerLocPos.y <= -2.0f){
 //        _owner->setLocalPosition(glm::vec3(-7,0,0));
 //    }

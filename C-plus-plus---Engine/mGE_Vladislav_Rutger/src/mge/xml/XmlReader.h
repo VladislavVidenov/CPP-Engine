@@ -3,8 +3,13 @@
 #include "pugixml.hpp"
 #include <vector>
 #include <iostream>
+#include <string>
+#include <sstream>
 #include "glm.hpp"
 #include "mge/core/GameObject.hpp"
+#include "mge/core/Mesh.hpp"
+#include "mge/materials/AbstractMaterial.hpp"
+#include "mge/materials/ColorMaterial.hpp"
 
 
 class XmlReader
@@ -15,18 +20,17 @@ class XmlReader
             void Read();
             std::vector<pugi::xml_node> GetNodeChildren(pugi::xml_node node);
             void LoadObjects();
+            void SetupObjects();
         //    void setUpPhysics();
+
             std::vector<GameObject *> objects;
 
-            std::vector<std::string> _objectNames;
-            std::vector<std::string> _objectTags;
-            std::vector<std::string> _objectTextures;
-            std::vector<std::string> _normalTextures;
-            std::vector<float> _colliderNames;
+            std::vector<std::string> _names;
+            std::vector<std::string> _diffuseTextures;
+            std::vector<std::string> _normalMaps;
 
-            std::vector<glm::vec3> _objectPositions;
-            std::vector<glm::vec3> _colliderOffset;
-            std::vector<glm::vec3> _colliderSize;
+            std::vector<glm::vec3> _positions;
+            std::vector<glm::vec3> _scales;
 
             template<typename T>
             T StringToNumber(const std::string& numberAsString);

@@ -1,8 +1,6 @@
 #include "XmlReader.h"
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <mge/config.hpp>
+
+#include "mge/config.hpp"
 
 XmlReader::XmlReader()
 {
@@ -18,7 +16,7 @@ void XmlReader::Read()
 {
      int counter;
   //  pugi::xml_parse_result result = ;
-    if(!_xmlFile.load_file("mge/xml/test.xml")) std::cout<<"Couldn't load the file"<<std::endl;
+    if(!_xmlFile.load_file("mge/xml/Cube.xml")) std::cout<<"Couldn't load the file"<<std::endl;
 
     pugi::xml_node root = _xmlFile.child("GameObjects");
    // std::cout<< "ROOT XML => " << root.name() << std::endl;
@@ -29,37 +27,48 @@ void XmlReader::Read()
     for(counter=0; counter!= _mainNodes.size();counter++)
     {
         std::cout<<"Read child"<<std::endl;
-        _objectNames.push_back(_mainNodes[counter].attribute("name").value());
-
+        //Add names to a list
+        _names.push_back(_mainNodes[counter].attribute("name").value());
+        //Read all object node children
         _objectProperties = GetNodeChildren(_mainNodes[counter]);
-     //   std::cout << " object node properties =>> " << _objectProperties.size() << std::endl;
-        // std::cout<< _objectProperties[0].attribute("name").value() <<std::endl;
-
-
-     //   _objectTextures.push_back(_objectProperties[0].attribute("name").value());
-
-   //     _normalTextures.push_back(_objectProperties[1].attribute("name").value());
-
-        _objectPositions.push_back(glm::vec3(StringToNumber<float>(_objectProperties[3].attribute("X").value()),
+        //Store positions
+        _positions.push_back(glm::vec3(StringToNumber<float>(_objectProperties[3].attribute("X").value()),
                                             StringToNumber<float>(_objectProperties[3].attribute("Y").value()),
                                             StringToNumber<float>(_objectProperties[3].attribute("Z").value())));
-//
-//        _colliderNames.push_back(StringToNumber<float>(_objectProperties[4].attribute("Type").value()));
-//
-//
-//
-//        _colliderOffset.push_back(glm::vec3(StringToNumber<float>(_objectProperties[5].attribute("x").value()),
-//                                            StringToNumber<float>(_objectProperties[5].attribute("y").value()),
-//                                            StringToNumber<float>(_objectProperties[5].attribute("z").value())));
-//
-        _colliderSize.push_back(glm::vec3(StringToNumber<float>(_objectProperties[6].attribute("X").value()),
-                                            StringToNumber<float>(_objectProperties[6].attribute("Y").value()),
-                                            StringToNumber<float>(_objectProperties[6].attribute("Z").value())));
+        //Store scales
+        _scales.push_back(glm::vec3(StringToNumber<float>(_objectProperties[5].attribute("X").value()),
+                                            StringToNumber<float>(_objectProperties[5].attribute("Y").value()),
+                                            StringToNumber<float>(_objectProperties[5].attribute("Z").value())));
     }
-
-
 }
+void XmlReader::SetupObjects()
+{
+    for(int i = 0; i < _names.size(); i++)
+    {
+        GameObject * obj = new GameObject(_names[i],_positions[i]);
+        obj->setMesh(Mesh::load(config::MGE_MODEL_PATH  + "Cubet.obj"));
+        obj->setMaterial(new ColorMaterial());
+       // obj->scale(_scales[i]);
 
+        glm::vec3 boxColSize(_scales[i]);
+        //boxColSize.x *= -1;
+        glm::vec3 halfSize = boxColSize * .5f;
+
+        glm::vec3 offset = obj->getLocalPosition();
+
+        glm::vec3 minBounds(offset.x - halfSize.x,
+                            offset.y - halfSize.y,
+                            offset.z - halfSize.z);
+        glm::vec3 maxBounds(offset.x + halfSize.x,
+                            offset.y + halfSize.y,
+                            offset.z + halfSize.z);
+
+
+        obj->setCollider(new BoxCollider(minBounds,maxBounds));
+        objects.push_back(obj);
+        //_collisionManager->addObject(colCube);
+    }
+}
 std::vector<pugi::xml_node> XmlReader::GetNodeChildren(pugi::xml_node node)
 {
         std::vector<pugi::xml_node> values;

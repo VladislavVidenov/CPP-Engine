@@ -35,10 +35,10 @@ void CollisionManager::doCollisionCheck()
     //std::cout << "col size" << _objects.size() << std::endl;
     for(unsigned int i = 0; i < _rbObjects.size(); i++)
     {
-        std::cout << "First obj -> " << _objects[i]->getName() << std::endl;
+       // std::cout << "First obj -> " << _objects[i]->getName() << std::endl;
         for(unsigned int j = 0; j < _objects.size(); j++)
         {
-             std::cout << "Second obj -> " << _objects[j]->getName() << std::endl;
+         //    std::cout << "Second obj -> " << _objects[j]->getName() << std::endl;
           //   std::cout << "Testing for " << j << " collisions." << std::endl;
 
 

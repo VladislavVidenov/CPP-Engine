@@ -8,7 +8,7 @@ using namespace std;
 #include "mge/core/World.hpp"
 #include "CollisionManager.h"
 #include "mge/core/FPS.hpp"
-
+#include "LUAManager.h"
 #include "mge/core/Camera.hpp"
 
 #include "mge/core/GameObject.hpp"
@@ -156,7 +156,8 @@ void MGEDemo::_initializeScene()
 
 
 
-
+/** PLAYER AND CAMERA
+*/
 
     Camera* camera = new Camera ("camera", glm::vec3(0,0,0));
     _world->add(camera);
@@ -170,19 +171,13 @@ void MGEDemo::_initializeScene()
     _world->add(Player);
 
     camera->setParent(Player);
-    camera->setLocalPosition(glm::vec3(0,5,0));
-    camera->rotate(glm::radians(-90.f),glm::vec3(1,0,0));
-   // camera->setBehaviour(new FPCamera(1.0f,1.0f,Player,_window));
+    camera->setLocalPosition(glm::vec3(0,2,0));
+    //camera->rotate(glm::radians(-45.f),glm::vec3(1,0,0));
+    camera->setBehaviour(new FPCamera(1.0f,1.0f,Player,_window));
 
-//    GameObject* cube = new GameObject ("cube", glm::vec3(0,0,0));
-//    cube->setMesh (cubeMeshF);
-//    cube->setMaterial(textureMaterial);
-//    cube->scale(glm::vec3(1));
-//    _world->add(cube);
 
-    /** GameObject* plane2
-            Multiple lights
-*/
+    /**  PROTOTYPE SCENE
+
     room = new GameObject ("room", glm::vec3(0,0,0));
     room->setMesh(roomMesh);
     room->setMaterial(wallMat);
@@ -232,7 +227,7 @@ void MGEDemo::_initializeScene()
     trigger ->scale(glm::vec3(0.2f));
 
 
-
+*/
 
     //{ LIGHTS
     //Directional Light
@@ -281,34 +276,34 @@ void MGEDemo::_initializeScene()
 
 
 
-    for(int i = 0 ; i < 100 ; i++)
-    {
-
-        GameObject* colCube = new GameObject ("colCubeA ", glm::vec3(5 + i,1,5+i ));
-        colCube ->setMesh (cubeMeshF);
-        colCube ->setMaterial(blueMaterial);
-        _world->add(colCube );
-
-
-
-        glm::vec3 boxColSize(2,2,2);
-        glm::vec3 halfSize = boxColSize * .5f;
-
-        glm::vec3 offset = colCube->getLocalPosition();
-
-        glm::vec3 minBounds(offset.x - halfSize.x,
-                            offset.y - halfSize.y,
-                            offset.z - halfSize.z);
-        glm::vec3 maxBounds(offset.x + halfSize.x,
-                            offset.y + halfSize.y,
-                            offset.z + halfSize.z);
-
-
-        boxCol = new BoxCollider(minBounds,maxBounds);
-        colCube->setCollider(boxCol);
-
-        _collisionManager->addObject(colCube);
-    }
+//    for(int i = 0 ; i < 1000 ; i++)
+//    {
+//
+//        GameObject* colCube = new GameObject ("colCubeA ", glm::vec3(5 + i,1,5+i ));
+//        colCube ->setMesh (cubeMeshF);
+//        colCube ->setMaterial(blueMaterial);
+//        _world->add(colCube );
+//
+//
+//
+//        glm::vec3 boxColSize(2,2,2);
+//        glm::vec3 halfSize = boxColSize * .5f;
+//
+//        glm::vec3 offset = colCube->getLocalPosition();
+//
+//        glm::vec3 minBounds(offset.x - halfSize.x,
+//                            offset.y - halfSize.y,
+//                            offset.z - halfSize.z);
+//        glm::vec3 maxBounds(offset.x + halfSize.x,
+//                            offset.y + halfSize.y,
+//                            offset.z + halfSize.z);
+//
+//
+//        boxCol = new BoxCollider(minBounds,maxBounds);
+//        colCube->setCollider(boxCol);
+//
+//        _collisionManager->addObject(colCube);
+//    }
 
 
 
@@ -349,29 +344,20 @@ void MGEDemo::_initializeScene()
 
 
 
-  //  boxCol->collide(sphereCol);
-
-  //  sphereCol->collide(sphereCol);
-    //sphereCol->collide(boxCol);
-
     XmlReader * xmlReader = new XmlReader();
-    std::vector<GameObject * > xmlObjects;
+    xmlReader->SetupObjects();
 
-    for (auto i = xmlReader->_objectPositions.begin(); i != xmlReader->_objectPositions.end(); ++i )
+    for (auto i = xmlReader->objects.begin(); i != xmlReader->objects.end(); ++i )
     {
-            GameObject * obj = new GameObject ("CUPE", *i);
-            obj->setMesh(CUPE);
-            obj->setMaterial(textureMaterial2);
-            cout << "loop" << endl;
-          //  _world->add(obj);
-            xmlObjects.push_back(obj);
+         // GameObject * go = (GameObject*)*i;
+        //  cout << go->getName() << endl;
+          _world->add(*i);
+
+          _collisionManager->addObject(*i);
     }
 
-    for(int i = 0; i < xmlObjects.size(); ++i){
-        GameObject * temp = xmlObjects[i];
-        temp->scale(xmlReader->_colliderSize[i]);
-    }
 
+    LUAManager::initializeFile();
 }
 
 void MGEDemo::CreateLights(){
