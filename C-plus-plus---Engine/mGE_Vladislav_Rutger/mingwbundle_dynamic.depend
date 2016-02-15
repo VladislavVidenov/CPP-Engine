@@ -2856,7 +2856,7 @@
 	"mge/core/AbstractGame.hpp"
 	"mge/MGEDemo.hpp"
 
-1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\abstractgame.hpp
+1455540188 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\abstractgame.hpp
 	<SFML/Graphics.hpp>
 	<GL/glew.h>
 	<string>
@@ -2874,11 +2874,13 @@
 
 1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\abstractbehaviour.hpp
 
-1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\gameobject.hpp
+1455540188 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\gameobject.hpp
 	<vector>
 	<string>
 	<iostream>
 	<glm.hpp>
+	"Collider.h"
+	"BoxCollider.h"
 
 1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\glm.hpp
 	<iostream>
@@ -2886,7 +2888,7 @@
 	<glm/glm.hpp>
 	<glm/ext.hpp>
 
-1455206407 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcamera.cpp
+1455208630 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcamera.cpp
 	"FPCamera.h"
 	<glm.hpp>
 	"mge/core/GameObject.hpp"
@@ -2897,7 +2899,7 @@
 	"mge/behaviours/AbstractBehaviour.hpp"
 	<SFML/Graphics.hpp>
 
-1455208151 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.cpp
+1455540188 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\fpcontroller.cpp
 	<glm.hpp>
 	"mge/behaviours/FPController.h"
 	"mge/core/GameObject.hpp"
@@ -2907,7 +2909,7 @@
 	<glm.hpp>
 	"mge/behaviours/AbstractBehaviour.hpp"
 
-1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour.cpp
+1455540188 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour.cpp
 	"mge/behaviours/KeysBehaviour.hpp"
 	"mge/core/GameObject.hpp"
 	<sfml/window/event.hpp>
@@ -2915,7 +2917,7 @@
 1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour.hpp
 	"mge/behaviours/AbstractBehaviour.hpp"
 
-1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour2.cpp
+1455540188 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\keysbehaviour2.cpp
 	"mge/behaviours/KeysBehaviour2.hpp"
 	"mge/core/GameObject.hpp"
 	<sfml/window/event.hpp>
@@ -2951,13 +2953,14 @@
 1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\rotatingbehaviour.hpp
 	"mge/behaviours/AbstractBehaviour.hpp"
 
-1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\abstractgame.cpp
+1455540188 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\abstractgame.cpp
 	"AbstractGame.hpp"
 	<iostream>
 	"mge/core/Timer.hpp"
 	"mge/core/FPS.hpp"
 	"mge/core/Renderer.hpp"
 	"mge/core/World.hpp"
+	"CollisionManager.h"
 
 1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\timer.hpp
 	<SFML/System.hpp>
@@ -2984,7 +2987,7 @@
 	"mge/core/FPS.hpp"
 	"mge/core/Timer.hpp"
 
-1455206800 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\gameobject.cpp
+1455540188 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\gameobject.cpp
 	<cassert>
 	<iostream>
 	<glm.hpp>
@@ -3024,7 +3027,7 @@
 1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\light\spotlight.h
 	<Light.h>
 
-1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\mesh.cpp
+1455208628 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\mesh.cpp
 	"mge/core/Mesh.hpp"
 	<iostream>
 	<map>
@@ -3078,7 +3081,7 @@
 1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\timer.cpp
 	"mge/core/Timer.hpp"
 
-1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\world.cpp
+1455540615 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\world.cpp
 	<cassert>
 	<algorithm>
 	<iostream>
@@ -3104,7 +3107,7 @@
 	"mge/materials/AbstractMaterial.hpp"
 	<glm.hpp>
 
-1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\config.hpp
+1455544399 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\config.hpp
 	<string>
 
 1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\fraglitcolormaterial.cpp
@@ -3202,7 +3205,7 @@
 
 1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\color.cpp
 
-1455105140 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\debughud.cpp
+1455378330 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\debughud.cpp
 	<cassert>
 	<iostream>
 	<cstdio>
@@ -3212,34 +3215,37 @@
 	"mge/util/DebugHud.hpp"
 	"mge/config.hpp"
 
-1455105140 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\debughud.hpp
+1455378330 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\util\debughud.hpp
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1455186647 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.cpp
+1455540188 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.cpp
 	"BoxCollider.h"
 	<iostream>
 
-1455198406 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.h
+1455540188 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\boxcollider.h
 	<glm.hpp>
 	<Collider.h>
+	<Collision.h>
 
-1455186647 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collider.h
+1455540188 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collider.h
+	<glm.hpp>
+	"Collision.h"
 
-1455186647 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collider.cpp
+1455540188 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collider.cpp
 	"Collider.h"
 	"BoxCollider.h"
 	"SphereCollider.h"
 	<iostream>
 
-1455186647 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\spherecollider.h
+1455540188 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\spherecollider.h
 	<Collider.h>
 
-1455186647 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\spherecollider.cpp
+1455540188 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\spherecollider.cpp
 	"SphereCollider.h"
 	<iostream>
 
-1455186647 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.cpp
+1455272843 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.cpp
 	<glm.hpp>
 	"mge/materials/TextureLitMaterial.hpp"
 	"mge/core/Texture.hpp"
@@ -3251,11 +3257,11 @@
 	"PointLight.h"
 	"mge/config.hpp"
 
-1455186647 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.hpp
+1455272843 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturelitmaterial.hpp
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
-1455186647 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturenormalmaterial.cpp
+1455272843 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\materials\texturenormalmaterial.cpp
 	<glm.hpp>
 	"mge/materials/TextureNormalMaterial.hpp"
 	"mge/core/Texture.hpp"
@@ -3271,12 +3277,15 @@
 	"mge/core/Texture.hpp"
 	"mge/materials/AbstractMaterial.hpp"
 
-1455207275 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\mgedemo.cpp
+1455547090 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\mgedemo.cpp
+	<glm.hpp>
 	<iostream>
 	<string>
 	"mge/core/Renderer.hpp"
+	"XmlReader.h"
 	"mge/core/Mesh.hpp"
 	"mge/core/World.hpp"
+	"CollisionManager.h"
 	"mge/core/FPS.hpp"
 	"mge/core/Camera.hpp"
 	"mge/core/GameObject.hpp"
@@ -3310,7 +3319,9 @@
 	"Collider.h"
 	"BoxCollider.h"
 	"SphereCollider.h"
+	"Collision.h"
 	"mge/util/DebugHud.hpp"
+	"LUAManager.h"
 	"mge/config.hpp"
 	"mge/MGEDemo.hpp"
 
@@ -3318,7 +3329,7 @@
 	<glm.hpp>
 	"Color.h"
 
-1455201843 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\boxbehaviour.cpp
+1455208630 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\boxbehaviour.cpp
 	"BoxBehaviour.h"
 	<glm.hpp>
 	"mge/core/GameObject.hpp"
@@ -3332,27 +3343,27 @@
 1455198406 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collision.cpp
 	"Collision.h"
 
-1455198406 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collision.h
+1455540188 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collision.h
 
-1455204160 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\triggerbehaviour.cpp
+1455208630 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\triggerbehaviour.cpp
 	"TriggerBehaviour.h"
 	<glm.hpp>
 	"mge/core/GameObject.hpp"
 	<SFML/Graphics.hpp>
 
-1455203501 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\triggerbehaviour.h
+1455208630 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\triggerbehaviour.h
 	<glm.hpp>
 	"mge/behaviours/AbstractBehaviour.hpp"
 	"mge/behaviours/DoorBehaviour.h"
 	<SFML/Graphics.hpp>
 
-1455205780 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\doorbehaviour.cpp
+1455208630 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\doorbehaviour.cpp
 	"DoorBehaviour.h"
 	<glm.hpp>
 	"mge/core/GameObject.hpp"
 	<SFML/Graphics.hpp>
 
-1455205489 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\doorbehaviour.h
+1455208630 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\behaviours\doorbehaviour.h
 	<glm.hpp>
 	"mge/behaviours/AbstractBehaviour.hpp"
 	<SFML/Graphics.hpp>
@@ -3449,4 +3460,64 @@
 1455537030 d:\workspace\mge_student_edition_v15.0.0\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collisionmanager.h
 	"Collision.h"
 	"mge/core/GameObject.hpp"
+
+1455208628 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\xml\pugixml.cpp
+	"pugixml.hpp"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<assert.h>
+	<wchar.h>
+	<math.h>
+	<float.h>
+	<setjmp.h>
+	<istream>
+	<ostream>
+	<string>
+	<new>
+	<stdint.h>
+
+1455208628 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\xml\pugixml.hpp
+	"pugiconfig.hpp"
+	<stddef.h>
+	<exception>
+	<iterator>
+	<iosfwd>
+	<string>
+
+1455208628 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\xml\pugiconfig.hpp
+
+1455540188 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collisionmanager.h
+	"Collision.h"
+	"mge/core/GameObject.hpp"
+
+1455540543 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\core\collision\collisionmanager.cpp
+	"CollisionManager.h"
+
+1455378330 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\xml\xmlreader.h
+	"pugixml.hpp"
+	<vector>
+	<iostream>
+	"glm.hpp"
+	"mge/core/GameObject.hpp"
+
+1455540188 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\xml\xmlreader.cpp
+	"XmlReader.h"
+	<iostream>
+	<string>
+	<sstream>
+	<mge/config.hpp>
+
+1455547901 source:c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\lua\luamanager.cpp
+	"LUAManager.h"
+	<lua.hpp>
+	<lauxlib.h>
+	<lualib.h>
+	<iostream>
+	<string>
+	<sstream>
+	<iostream>
+
+1455547906 c:\users\kamel\desktop\opengl\cpp-engine\c-plus-plus---engine\mge_vladislav_rutger\src\mge\lua\luamanager.h
+	"lua.hpp"
 
