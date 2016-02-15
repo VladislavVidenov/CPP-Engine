@@ -2,25 +2,31 @@
 #define BOXCOLLIDER_H
 #include <glm.hpp>
 #include <Collider.h>
-
+#include <Collision.h>
 
 class BoxCollider : public Collider
 {
     public:
-        BoxCollider();
+        BoxCollider(const glm::vec3 pMinBounds, const glm::vec3 pMaxBounds);
         virtual ~BoxCollider();
 
-    void collide(Collider * pCollider);
-    void collide(BoxCollider * pBoxCol);
-    void collide(SphereCollider * pSphereCol);
+        Collision collide(Collider * pCollider);
+        Collision collide(BoxCollider * pBoxCol);
+        Collision collide(SphereCollider * pSphereCol);
 
-    inline const glm::vec3 getMinBounds() const { return _minBounds; }
-    inline const glm::vec3 getMaxBounds() const { return _maxBounds; }
+        void translate(const glm::vec3 pTranslation);
+
+        bool isColliding = false;
+        float colDistance = 0;
+
+        inline const glm::vec3 getMinBounds() const { return _minBounds; }
+        inline const glm::vec3 getMaxBounds() const { return _maxBounds; }
 
     protected:
     private:
         glm::vec3 _minBounds;
         glm::vec3 _maxBounds;
+
 };
 
 #endif // BOXCOLLIDER_H

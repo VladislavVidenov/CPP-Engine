@@ -8,6 +8,7 @@ using namespace std;
 
 class World;
 class Renderer;
+class CollisionManager;
 
 /**
  * Defines the basic structure for a game, with defaults already filled in.
@@ -42,6 +43,7 @@ class AbstractGame
         virtual void _initializeGlew();
         //create our own custom renderer instance
         virtual void _initializeRenderer();
+        virtual void _initializePhysiscs();
         //initialize a scene root to which we can attach/add objects
         virtual void _initializeWorld();
 
@@ -52,12 +54,14 @@ class AbstractGame
         virtual void _update();
         //render all game objects in the display root
         virtual void _render();
+        virtual void _runPhysics();
         //process any sfml window events (see SystemEventDispatcher/Listener)
         virtual void _processEvents();
 
 		sf::RenderWindow* _window;  //sfml window to render into
 		Renderer* _renderer;        //the renderer class to render the world
 		World* _world;              //the root game object that represents our scene
+		CollisionManager * _collisionManager;
 		bool _running;
 
 };

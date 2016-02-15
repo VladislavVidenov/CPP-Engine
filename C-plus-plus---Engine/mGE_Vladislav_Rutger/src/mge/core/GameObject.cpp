@@ -13,7 +13,9 @@ GameObject::GameObject(std::string pName, glm::vec3 pPosition )
 :	_name( pName ), _transform( glm::translate( pPosition ) ),  _parent(NULL), _children(),
     _mesh( NULL ),_behaviour( NULL ), _material(NULL), _world(NULL)
 {
+    oldPos = getLocalPosition();
 }
+
 
 GameObject::~GameObject()
 {
@@ -107,6 +109,17 @@ void GameObject::setParent (GameObject* pParent) {
     }
 }
 
+Collider* GameObject::getCollider()
+{
+    glm::vec3 translation = getLocalPosition()  - oldPos;
+    oldPos = getLocalPosition();
+
+    boxCollider->translate(translation);
+//    std::cout << "Returned collider position -> " <<
+//    "Min Bounds -> " << ((BoxCollider*)boxCollider)->getMinBounds() <<
+//    "Max Bounds -> " << ((BoxCollider*)boxCollider)->getMaxBounds() << std::endl;
+    return boxCollider;
+}
 GameObject* GameObject::getParent() {
     return _parent;
 }

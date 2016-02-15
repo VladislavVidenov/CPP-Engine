@@ -5,6 +5,8 @@
 #include <string>
 #include <iostream>
 #include <glm.hpp>
+#include "Collider.h"
+#include "BoxCollider.h"
 
 class AbstractCollider;
 class AbstractBehaviour;
@@ -76,6 +78,14 @@ class GameObject
 
         int getChildCount();
         GameObject* getChildAt (int pIndex);
+
+        Collider* boxCollider;
+
+        Collider* getCollider();
+        glm::vec3 oldPos;
+        inline void setCollider(Collider* collider){
+            boxCollider = collider;
+        }
 
 	protected:
 		std::string _name;

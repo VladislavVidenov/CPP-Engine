@@ -7,14 +7,18 @@
 class SphereCollider : public Collider
 {
     public:
-        SphereCollider();
+        SphereCollider(glm::vec3 pCenter, float pRadius);
         virtual ~SphereCollider();
 
-        void collide(Collider * pCollider);
-        void collide(BoxCollider * pBoxCol);
-        void collide(SphereCollider * pSphereCol);
+        Collision collide(Collider * pCollider);
+        Collision collide(BoxCollider * pBoxCol);
+        Collision collide(SphereCollider * pSphereCol);
+
+        void translate(const glm::vec3 pTranslation);
     protected:
     private:
+        float _radius;
+        glm::vec3 _center;
 };
 
 #endif // SPHERECOLLIDER_H

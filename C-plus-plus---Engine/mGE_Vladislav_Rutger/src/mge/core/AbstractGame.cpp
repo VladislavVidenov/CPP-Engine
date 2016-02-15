@@ -7,6 +7,7 @@ using namespace std;
 #include "mge/core/FPS.hpp"
 #include "mge/core/Renderer.hpp"
 #include "mge/core/World.hpp"
+#include "CollisionManager.h"
 
 AbstractGame::AbstractGame():_window(NULL),_renderer(NULL),_world(NULL),_running(false)
 {
@@ -19,6 +20,7 @@ AbstractGame::~AbstractGame()
     delete _window;
     delete _renderer;
     delete _world;
+    delete _collisionManager;
 }
 
 void AbstractGame::initialize() {
@@ -27,8 +29,11 @@ void AbstractGame::initialize() {
     _printVersionInfo();
     _initializeGlew();
     _initializeRenderer();
+    _initializePhysiscs();
     _initializeWorld();
+
     _initializeScene();
+
     cout << endl << "Engine initialized." << endl << endl;
 }
 
@@ -81,7 +86,15 @@ void AbstractGame::_initializeWorld() {
     //setup our own world
 	cout << "Initializing world..." << endl;
 	_world = new World();
+
     cout << "World initialized." << endl << endl;
+}
+
+void AbstractGame::_initializePhysiscs() {
+    //setup our own physics manaer
+	cout << "Initializing physics..." << endl;
+	_collisionManager = new CollisionManager();
+    cout << "Physics initialized." << endl << endl;
 }
 
 ///LOOP
@@ -98,7 +111,7 @@ void AbstractGame::run()
 		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
         _update();
-        //collision loop over here?
+        _runPhysics();
         _render();
 
         //swap colorbuffer to screen
@@ -115,6 +128,12 @@ void AbstractGame::_update() {
 void AbstractGame::_render () {
     _renderer->render(_world);
 }
+void AbstractGame::_runPhysics()
+{
+    _collisionManager->runPhysics(Timer::deltaTime());
+}
+
+
 
 void AbstractGame::_processEvents()
 {

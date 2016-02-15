@@ -1,7 +1,8 @@
 #include "SphereCollider.h"
 #include <iostream>
 using namespace std;
-SphereCollider::SphereCollider()
+SphereCollider::SphereCollider(glm::vec3 pCenter,float pRadius):
+    _center(pCenter),_radius(pRadius)
 {
     //ctor
 }
@@ -10,19 +11,24 @@ SphereCollider::~SphereCollider()
 {
     //dtor
 }
-void SphereCollider::collide(Collider * pCollider)
+Collision SphereCollider::collide(Collider * pCollider)
 {
     cout << "Double dispatch..." << endl;
     pCollider->collide(this);
 }
-void SphereCollider::collide(BoxCollider * pBoxCol)
+Collision SphereCollider::collide(BoxCollider * pBoxCol)
 {
     cout << "SphereCol.collides (BoxCol)" << endl;
     Collider::resolveCollision(pBoxCol, this);
 }
 
-void SphereCollider::collide(SphereCollider * pSphereCol)
+Collision SphereCollider::collide(SphereCollider * pSphereCol)
 {
     cout << "SphereCol.collides (SphereCol)" << endl;
     Collider::resolveCollision(this, pSphereCol);
+}
+
+void SphereCollider::translate(const glm::vec3 pTranslation)
+{
+    _center += pTranslation;
 }

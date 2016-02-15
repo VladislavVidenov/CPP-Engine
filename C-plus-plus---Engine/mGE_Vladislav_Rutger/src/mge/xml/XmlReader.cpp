@@ -18,7 +18,7 @@ void XmlReader::Read()
 {
      int counter;
   //  pugi::xml_parse_result result = ;
-    if(!_xmlFile.load_file("mge/xml/test2.xml")) std::cout<<"Couldn't load the file"<<std::endl;
+    if(!_xmlFile.load_file("mge/xml/test.xml")) std::cout<<"Couldn't load the file"<<std::endl;
 
     pugi::xml_node root = _xmlFile.child("GameObjects");
    // std::cout<< "ROOT XML => " << root.name() << std::endl;
@@ -75,7 +75,6 @@ template<typename T>
 T XmlReader::StringToNumber(const std::string& numberAsString)
 {
     T value;
-
     std::stringstream stream(numberAsString);
     stream >> value;
     return value;

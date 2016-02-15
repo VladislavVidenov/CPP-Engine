@@ -2,11 +2,11 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
 #include "mge/core/Renderer.hpp"
 #include "XmlReader.h"
 #include "mge/core/Mesh.hpp"
 #include "mge/core/World.hpp"
+#include "CollisionManager.h"
 #include "mge/core/FPS.hpp"
 
 #include "mge/core/Camera.hpp"
@@ -49,6 +49,7 @@ using namespace std;
 #include "Collider.h"
 #include "BoxCollider.h"
 #include "SphereCollider.h"
+#include "Collision.h"
 
 #include "mge/util/DebugHud.hpp"
 
@@ -79,7 +80,9 @@ PointLight* light2;
 GameObject* pilars ;
 GameObject* roof ;
 GameObject* spikes ;
-
+ BoxCollider  * playerCol;
+ BoxCollider  * boxCol;
+ BoxCollider  * boxCol2;
 GameObject* box;
 //build the game _world
 void MGEDemo::_initializeScene()
@@ -146,150 +149,30 @@ void MGEDemo::_initializeScene()
     AbstractMaterial * greenMaterial = new ColorMaterial(glm::vec3(0,1,0));
     AbstractMaterial * maroonMaterial = new ColorMaterial(Color::Maroon);
 
-    float ambientIntensity = 0.2f;
 
-    //Color material + Vertex Directional Lighting
-    AbstractMaterial* vertexLitLightMaterial = new VertexLitColorMaterial(glm::vec3(1,0,0));
-    ((VertexLitColorMaterial*)vertexLitLightMaterial)->setGlobalAmbientColor(glm::vec3(1,0,0) * ambientIntensity );
-    ((VertexLitColorMaterial*)vertexLitLightMaterial)->setDirectionalLightColor(glm::vec3(1,1,1));
-    ((VertexLitColorMaterial*)vertexLitLightMaterial)->setDirectionalLight(glm::vec3(0,-1,1));
-    //Color material + Fragment Directional Lighting
-    AbstractMaterial* fragLitLightMaterial = new FragLitColorMaterial(glm::vec3(Color::Maroon));
-    ((FragLitColorMaterial*)fragLitLightMaterial)->setGlobalAmbientColor(glm::vec3(0,1,0) * ambientIntensity);
-    ((FragLitColorMaterial*)fragLitLightMaterial)->setDirectionalLightColor(glm::vec3(1,1,1));
-    ((FragLitColorMaterial*)fragLitLightMaterial)->setDirectionalLight(glm::vec3(0,-1,1));
-    //Color material + Fragment Point Light -> No attenuation
-    pointLightMaterial = new PointLightMaterial(glm::vec3(1.0f, 0.5f, 0.31f));
-    ((PointLightMaterial*)pointLightMaterial)->setGlobalAmbientColor(glm::vec3(0,0.5f,0) * ambientIntensity);
-    ((PointLightMaterial*)pointLightMaterial)->setLightColor(glm::vec3(1,1,1));
-   //Color Material + fragment Point Light -> with attenuation
-    pointAttenuationMat = new PointLightAttenuationMaterial(glm::vec3(1.0f, 0.5f, 0.31f));
-    ((PointLightAttenuationMaterial*)pointAttenuationMat)->setGlobalAmbientColor(glm::vec3(0,0.5f,0) * ambientIntensity);
  //==========================================================================================================================================================================================================================//
 
     DoorBehaviour * doorBehaviour = new DoorBehaviour();
-//
-
-    /**
-         Different light implementations, best work if object is added alone in scene !!!!
-
-
-        // VERTEX directional light
-//        GameObject* testCube = new GameObject ("cube", glm::vec3(2,2,0));
-//        testCube->setMesh (cubeMeshF);
-//        testCube->setMaterial(vertexLitLightMaterial);
-
-
-//        // FRAG directional light
-//        GameObject* testCube = new GameObject ("cube", glm::vec3(2,2,0));
-//        testCube->setMesh (cubeMeshF);
-//        testCube->setMaterial(fragLitLightMaterial);
-//
-//
-//        // FRAG point light -> no attenuation
-//        GameObject* testCube = new GameObject ("cube", glm::vec3(2,2,0));
-//        testCube->setMesh (cubeMeshF);
-//        testCube->setMaterial(pointLightMaterial);
-//
-//
-//
-//        // FRAG point light -> with attenuation
-//        GameObject* testCube = new GameObject ("cube", glm::vec3(2,2,0));
-//        testCube->setMesh (cubeMeshF);
-//        testCube->setMaterial(pointAttenuationMat);
-
-            //Point Light
-//        GameObject* testCube = new GameObject ("cube", glm::vec3(2,2,0));
-//        testCube->setMesh (cubeMeshF);
-//        testCube->setMaterial(pointAttenuationMat);
-
-//
-//
-
-
-        Camera* camera = new Camera ("camera", glm::vec3(0,10,7));
-        camera->rotate(glm::radians(-45.f),glm::vec3(1,0,0));
-        camera->setBehaviour(new Orbit(testCube,25.f,85.f,25.f));
-        _world->add(camera);
-        _world->setMainCamera(camera);
-        _world->add(testCube);
-
- */
-
-
-    /**LOAD OWN OBJECT
-
-
-        GameObject* pistol = new GameObject("Pistol", glm::vec3(0,1,0));
-        pistol->setMesh(handgunMesh);
-        pistol->setMaterial(pistolMat);
-        pistol->scale(glm::vec3(0.1f));
-        pistol->setBehaviour(new KeysBehaviour());
-        _world->add(pistol);
-
-        Camera* camera = new Camera ("camera", glm::vec3(0,10,7));
-        camera->rotate(glm::radians(-45.f),glm::vec3(1,0,0));
-        camera->setBehaviour(new Orbit(pistol,25.f,85.f,25.f));
-        _world->add(camera);
-        _world->setMainCamera(camera);
- */
-
-
-    /**
-        Assignment 4 =>
-
-    GameObject* plane = new GameObject ("plane", glm::vec3(0,0,0));
-    plane->scale(glm::vec3(5,5,5));
-    plane->setMesh(planeHighPoly);
-    plane->setMaterial(terrainMaterial);
-    _world->add(plane);
-
-    Camera* camera = new Camera ("camera", glm::vec3(0,10,7));
-    camera->rotate(glm::radians(-45.f),glm::vec3(1,0,0));
-    camera->setBehaviour(new Orbit(plane,25.f,85.f,45.f));
-    _world->add(camera);
-    _world->setMainCamera(camera);
-*/
-
-    /**
-        Drive around =>
-
-    GameObject* teapot = new GameObject ("teapot", glm::vec3(0,0,0));
-    teapot->setMesh (teapotMeshS);
-    teapot->setMaterial(textureMaterial2);
-    teapot->setBehaviour (new KeysBehaviour());
-    _world->add(teapot);
-
-    Camera* camera = new Camera ("camera", glm::vec3(0,1,0));
-    _world->add(camera);
-    _world->setMainCamera(camera);
-    camera->setParent(teapot);
-    camera->rotate(glm::radians(180.f), glm::vec3(0,1,0));
-    */
-
-/** Wobble , nothat much
-
-
-*/
 
 
 
 
-    Camera* camera = new Camera ("camera", glm::vec3(-7,0,0));
+
+    Camera* camera = new Camera ("camera", glm::vec3(0,0,0));
     _world->add(camera);
     _world->setMainCamera(camera);
 
-
-    Player = new GameObject ("plane2", glm::vec3(-7,0,0));
+    Player = new GameObject ("plane2", glm::vec3(8,1,8));
     Player->setMesh(cubeMeshF);
     Player->setMaterial(maroonMaterial);
-    Player->setBehaviour(new FPController(3.0f,1.0f,camera,FPController::InputType::WASD));
-    Player->scale(glm::vec3(.1f));
+    Player->setBehaviour(new FPController(0.3f,1.0f,camera,FPController::InputType::WASD));
+    //Player->scale(glm::vec3(1f));
     _world->add(Player);
 
     camera->setParent(Player);
-    camera->setLocalPosition(glm::vec3(0,1,0));
-    camera->setBehaviour(new FPCamera(1.0f,1.0f,Player,_window));
+    camera->setLocalPosition(glm::vec3(0,5,0));
+    camera->rotate(glm::radians(-90.f),glm::vec3(1,0,0));
+   // camera->setBehaviour(new FPCamera(1.0f,1.0f,Player,_window));
 
 //    GameObject* cube = new GameObject ("cube", glm::vec3(0,0,0));
 //    cube->setMesh (cubeMeshF);
@@ -350,12 +233,6 @@ void MGEDemo::_initializeScene()
 
 
 
-//    Camera* camera = new Camera ("camera", glm::vec3(0,5,3));
-//    camera->rotate(glm::radians(-45.f),glm::vec3(1,0,0));
-//    camera->setBehaviour(new Orbit(cube,25.f,85.f,5.f));
-//    _world->add(camera);
-//    _world->setMainCamera(camera);
-
 
     //{ LIGHTS
     //Directional Light
@@ -404,15 +281,78 @@ void MGEDemo::_initializeScene()
 
 
 
-    Collider * boxCol = new BoxCollider();
-    Collider * sphereCol = new SphereCollider();
+    for(int i = 0 ; i < 100 ; i++)
+    {
+
+        GameObject* colCube = new GameObject ("colCubeA ", glm::vec3(5 + i,1,5+i ));
+        colCube ->setMesh (cubeMeshF);
+        colCube ->setMaterial(blueMaterial);
+        _world->add(colCube );
 
 
-    boxCol->collide(boxCol);
-    boxCol->collide(sphereCol);
 
-    sphereCol->collide(sphereCol);
-    sphereCol->collide(boxCol);
+        glm::vec3 boxColSize(2,2,2);
+        glm::vec3 halfSize = boxColSize * .5f;
+
+        glm::vec3 offset = colCube->getLocalPosition();
+
+        glm::vec3 minBounds(offset.x - halfSize.x,
+                            offset.y - halfSize.y,
+                            offset.z - halfSize.z);
+        glm::vec3 maxBounds(offset.x + halfSize.x,
+                            offset.y + halfSize.y,
+                            offset.z + halfSize.z);
+
+
+        boxCol = new BoxCollider(minBounds,maxBounds);
+        colCube->setCollider(boxCol);
+
+        _collisionManager->addObject(colCube);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-------Player collision -----------------------
+
+
+
+    glm::vec3 boxColSize2(2,2,2);
+    glm::vec3 halfSize2 = boxColSize2 * .5f;
+
+    glm::vec3 offset2 = Player->getLocalPosition();
+
+
+    glm::vec3 minBounds3(offset2.x - halfSize2.x,
+                        offset2.y - halfSize2.y,
+                        offset2.z - halfSize2.z);
+    glm::vec3 maxBounds3(offset2.x + halfSize2.x,
+                        offset2.y + halfSize2.y,
+                        offset2.z + halfSize2.z);
+
+
+    boxCol2 = new BoxCollider(minBounds3,maxBounds3);
+    Player->setCollider(boxCol2);
+//-------Player collision -----------------------
+
+
+    _collisionManager->addRbObject(Player);
+
+
+
+  //  boxCol->collide(sphereCol);
+
+  //  sphereCol->collide(sphereCol);
+    //sphereCol->collide(boxCol);
 
     XmlReader * xmlReader = new XmlReader();
     std::vector<GameObject * > xmlObjects;
@@ -440,18 +380,17 @@ void MGEDemo::CreateLights(){
 }
 bool won = false;
 void MGEDemo::_render() {
-
+    //Collider * dummy = Player->getCollider();
     if(Player->getLocalPosition().x > 4.5f) won = true;
     if(won) {
         string winText =  " YOU WIN YAAY !";
         _hud->setWinTextInfo(winText);
     }
-    ((PointLightMaterial*)pointLightMaterial)->setLightPos(light2->getWorldPosition());
-   // ((PointLightAttenuationMaterial*)pointAttenuationMat)->setLightPos(light2->getWorldPosition());
+
     AbstractGame::_render();
     _updateHud();
-
-    //std::cout<<Player->getLocalPosition()<<std::endl;
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::C)) system("cls");
+   // std::cout<<Player->getLocalPosition()<<std::endl;
 
    // _world->renderDebugInfo();
 }
