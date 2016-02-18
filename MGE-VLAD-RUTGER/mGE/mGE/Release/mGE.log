@@ -1,0 +1,7 @@
+﻿LUAManager.obj : error LNK2001: unresolved external symbol "void __cdecl lua_pushcclosure(struct lua_State *,int (__cdecl*)(struct lua_State *),int)" (?lua_pushcclosure@@YAXPAUlua_State@@P6AH0@ZH@Z)
+LUAManager.obj : error LNK2001: unresolved external symbol "void __cdecl lua_setfield(struct lua_State *,int,char const *)" (?lua_setfield@@YAXPAUlua_State@@HPBD@Z)
+LUAManager.obj : error LNK2001: unresolved external symbol "char const * __cdecl lua_tolstring(struct lua_State *,int,unsigned int *)" (?lua_tolstring@@YAPBDPAUlua_State@@HPAI@Z)
+LUAManager.obj : error LNK2001: unresolved external symbol "void __cdecl lua_close(struct lua_State *)" (?lua_close@@YAXPAUlua_State@@@Z)
+LUAManager.obj : error LNK2001: unresolved external symbol "void __cdecl lua_getfield(struct lua_State *,int,char const *)" (?lua_getfield@@YAXPAUlua_State@@HPBD@Z)
+LUAManager.obj : error LNK2001: unresolved external symbol "int __cdecl lua_pcall(struct lua_State *,int,int,int)" (?lua_pcall@@YAHPAUlua_State@@HHH@Z)
+D:\MGE-VLAD-RUTGER\mGE\Release\mGE.exe : fatal error LNK1120: 6 unresolved externals

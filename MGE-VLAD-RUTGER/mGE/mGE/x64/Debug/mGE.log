@@ -1,0 +1,74 @@
+﻿  XmlReader.cpp
+  pugixml.cpp
+  DebugHud.cpp
+d:\mge-vlad-rutger\mge\mge\src\mge\util\debughud.cpp(51): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Color.cpp
+  MGEDemo.cpp
+  WobblyMaterial.cpp
+  VertexLitColorMaterial.cpp
+  TextureNormalMaterial.cpp
+d:\mge-vlad-rutger\mge\mge\src\mge\materials\texturenormalmaterial.cpp(53): warning C4101: 'pointCount': unreferenced local variable
+  TextureMaterial.cpp
+  TextureLitMaterial.cpp
+  TerrainMaterial.cpp
+  SpotLightMaterial.cpp
+  PointLightMaterial.cpp
+  PointLightAttenuationMaterial.cpp
+  FragLitColorMaterial.cpp
+  ColorMaterial.cpp
+  AbstractMaterial.cpp
+  LUAManager.cpp
+  World.cpp
+d:\mge-vlad-rutger\mge\mge\src\mge\core\world.cpp(25): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Timer.cpp
+  Generating Code...
+  Compiling...
+  Texture.cpp
+  Sound.cpp
+  ShaderProgram.cpp
+  Renderer.cpp
+  ObjectPicker.cpp
+  Mesh.cpp
+d:\mge-vlad-rutger\mge\mge\src\mge\core\mesh.cpp(156): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+d:\mge-vlad-rutger\mge\mge\src\mge\core\mesh.cpp(176): warning C4244: 'argument': conversion from 'unsigned int' to 'const float', possible loss of data
+d:\mge-vlad-rutger\mge\mge\src\mge\core\mesh.cpp(185): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\mge-vlad-rutger\mge\mge\src\mge\core\mesh.cpp(230): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+d:\mge-vlad-rutger\mge\mge\src\mge\core\mesh.cpp(231): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+d:\mge-vlad-rutger\mge\mge\src\mge\core\mesh.cpp(315): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\mge-vlad-rutger\mge\mge\src\mge\core\mesh.cpp(364): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  SpotLight.cpp
+  PointLight.cpp
+  Light.cpp
+  DirectionalLight.cpp
+  GameObject.cpp
+d:\mge-vlad-rutger\mge\mge\src\mge\core\gameobject.cpp(222): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\mge-vlad-rutger\mge\mge\src\mge\core\gameobject.cpp(228): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  FPS.cpp
+d:\mge-vlad-rutger\mge\mge\src\mge\core\fps.cpp(17): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
+  SphereCollider.cpp
+  Rigidbody.cpp
+  PhysicsManager.cpp
+  CollisionManager.cpp
+  Collider.cpp
+  BoxCollider.cpp
+  Camera.cpp
+  AbstractGame.cpp
+  Generating Code...
+d:\mge-vlad-rutger\mge\mge\src\mge\core\gameobject.cpp(131): warning C4715: 'GameObject::getRigidbody': not all control paths return a value
+  Compiling...
+  TriggerBehaviour.cpp
+  RotatingBehaviour.cpp
+  Orbit.cpp
+d:\mge-vlad-rutger\mge\mge\src\mge\behaviours\orbit.cpp(33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\mge-vlad-rutger\mge\mge\src\mge\behaviours\orbit.cpp(34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  LookAt.cpp
+  KeysBehaviour2.cpp
+  KeysBehaviour.cpp
+  FPController.cpp
+  FPCamera.cpp
+  DoorBehaviour.cpp
+  BoxBehaviour.cpp
+  AbstractBehaviour.cpp
+  main.cpp
+  Generating Code...
+sfml-graphics-d.lib(sfml-graphics-d-2.dll) : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64'
