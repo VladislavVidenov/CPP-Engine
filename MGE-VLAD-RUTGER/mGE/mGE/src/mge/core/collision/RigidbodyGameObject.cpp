@@ -24,21 +24,20 @@ void RigidbodyGameObject::moveRb(glm::vec3 pPos)
 {
 	neV3 posToSet;
 	posToSet.Set(pPos.x, pPos.y, pPos.z);
-	_rigidbody->SetPos(_rigidbody->GetPos() + posToSet);
+	_rigidbody->SetVelocity( posToSet);
 }
 void RigidbodyGameObject::updateRigidBody()
 {
 	if (_name == "Player")
 	{
 		glm::vec3 translate;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) translate += getForward() * 0.01f;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) translate -= getForward() * 0.01f;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) translate -= getRight() * 0.01f;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) translate += getRight() * 0.01f;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) translate += getForward() ;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) translate -= getForward() ;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) translate -= getRight() ;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) translate += getRight() ;
 		std::cout << "translate " << translate << std::endl;
-		if (abs(translate.x) == 1 && abs(translate.z) == 1) translate *= 0.707f; else translate *= 1;
-
-		moveRb(translate);
+		//if (abs(translate.x) == 1 && abs(translate.z) == 1) translate *= 0.707f; else translate *= 1;
+		if (glm::length(translate)> 0) moveRb(translate);
 	}
 	neV3 rbPos = _rigidbody->GetPos();
 

@@ -1,5 +1,3 @@
-﻿  PhysicsWorld.cpp
-d:\mge-vlad-rutger\mge\mge\src\mge\core\collision\physicsworld.cpp(49): warning C4018: '<': signed/unsigned mismatch
-d:\mge-vlad-rutger\mge\mge\src\mge\core\collision\physicsworld.cpp(55): warning C4018: '<': signed/unsigned mismatch
-  mGE.vcxproj -> D:\MGE-VLAD-RUTGER\mGE\Debug\mGE.exe
-  mGE.vcxproj -> D:\MGE-VLAD-RUTGER\mGE\Debug\mGE.pdb (Partial PDB)
+﻿  RigidbodyGameObject.cpp
+  mGE.vcxproj -> C:\Users\kamel\Desktop\OpenGl\CPP-Engine\MGE-VLAD-RUTGER\mGE\Debug\mGE.exe
+  mGE.vcxproj -> C:\Users\kamel\Desktop\OpenGl\CPP-Engine\MGE-VLAD-RUTGER\mGE\Debug\mGE.pdb (Partial PDB)
